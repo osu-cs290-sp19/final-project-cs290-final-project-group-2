@@ -21,7 +21,7 @@ a {
 }
 
 .header-img {
-	width: 20%;
+	width: 30%;
 }
 
 .navbar {
@@ -99,21 +99,17 @@ a:focus {
   outline: none;
 }
 
-.menu-container {
-
-}
-
 .level-menu {
-	width: 50%;
+	width: 40%;
 }
 
-.twit-container {
+.menu-container {
   margin: 50px 10%;
   display: flex;
   flex-wrap: wrap;
 }
 
-.twit {
+.level {
   flex: 0 1 28%;
   display: flex;
   margin: 2px;
@@ -122,6 +118,24 @@ a:focus {
   border-radius: 2px;
   background-color: #fff;
 }
+
+.section {
+  margin: 0;
+  padding-right: 50px;
+}
+
+/* .solve {
+  width: 200px;
+  height: 300px;
+}
+
+.solve-div {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
 
 .twit-icon {
   font-size: 24px;
