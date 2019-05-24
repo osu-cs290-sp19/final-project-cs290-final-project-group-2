@@ -1,7 +1,7 @@
 var solveButton = document.getElementById("solveButton");
-solveButton.onclick = function() {printOptions()};
+solveButton.onclick = function() {checkLevels()};
 
-function printOptions() {
+function checkLevels() {
     var selectCount = 0;
     var bombId = "";
     for (var i = 0; i < document.getElementsByTagName("select").length; i++) {
