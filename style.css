@@ -134,33 +134,33 @@ a:focus {
         .b {
             grid-column: 2;
             grid-row: 1;
-		}
-		.c {
-			grid-column: 3;
-			grid-row: 1;
-		}
-		.d {
-			grid-column: 1;
-			grid-row: 2;
-		}
-		.solve {
-			border: none;
-			grid-column: 2;
-			grid-row: 2/4;
-			text-align: center;
-		}
-		.e {
-			grid-column: 3;
-			grid-row: 2;
-		}
-		.f {
-			grid-column: 1;
-			grid-row: 3;
-		}
-		.g {
-			grid-column: 3;
-			grid-row: 3;
-		}
+        }
+        .c {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        .d {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .solve {
+            border: none;
+            grid-column: 2;
+            grid-row: 2/4;
+            text-align: center;
+        }
+        .e {
+            grid-column: 3;
+            grid-row: 2;
+        }
+        .f {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        .g {
+            grid-column: 3;
+            grid-row: 3;
+        }
 
 .twit-icon {
     font-size: 24px;
@@ -232,7 +232,7 @@ a:focus {
 }
 
 .hidden {
-	visibility: hidden;
+    visibility: hidden;
     /*display: none;*/
 }
 
