@@ -145,14 +145,11 @@ a:focus {
 			grid-row: 2;
 		}
 		.solve {
+      border: none;
 			grid-column: 2;
 			grid-row: 2/4;
 			text-align: center;
 		}
-			.solve-button {
-				margin-top: 25%;
-				padding: 50px;
-			}
 		.e {
 			grid-column: 3;
 			grid-row: 2;
