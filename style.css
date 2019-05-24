@@ -99,6 +99,18 @@ a:focus {
   outline: none;
 }
 
+.module-container {
+  margin: 50px 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.module-button {
+  height: 50px;
+  margin: 10px;
+  border: solid #B94423 2px;
+}
+
 .menu-container {
 	display: grid;
 	margin: 30px;
