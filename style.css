@@ -149,6 +149,12 @@ a:focus {
             grid-row: 2/4;
             text-align: center;
         }
+        .solve:focus {
+            /* border: none; */
+            grid-column: 2;
+            grid-row: 2/4;
+            text-align: center;
+        }
         .e {
             grid-column: 3;
             grid-row: 2;
