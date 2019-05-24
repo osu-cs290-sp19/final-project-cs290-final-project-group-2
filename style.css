@@ -1,7 +1,7 @@
 body {
   font-family: Roboto, Helvetica, sans-serif;
   margin: 0;
-  background-color: #eee;
+  background-color: #2f2f33;
 }
 
 a {
@@ -21,11 +21,11 @@ a {
 }
 
 .header-img {
-	width: 30%;
+	width: 550px;
 }
 
 .navbar {
-  background-color: #fff;
+  background-color: #0c0c0e;
   font-size: 18px;
   line-height: 22px;
 }
@@ -40,12 +40,12 @@ a {
 }
 
 a {
-  color: #343434;
+  color: #ffffff;
 }
 
 a:hover,
 a:focus {
-  color: #319df6;
+  color: #ba4423;
 }
 
 a:focus {
@@ -58,7 +58,7 @@ a:focus {
 }
 
 .navlink.active {
-  box-shadow: inset 0 -3px #319df6;
+  box-shadow: inset 0 -3px #ba4423;
 }
 
 .navbar-user {
@@ -71,7 +71,7 @@ a:focus {
 #navbar-user-input {
   padding: 4px;
   font-size: 16px;
-  background-color: #eee;
+  background-color: #0c0c0e;
   border: 1px solid #dadada;
   border-radius: 2px;
 }
@@ -86,57 +86,82 @@ a:focus {
   font-size: 16px;
   background: none;
   border: none;
-  color: #343434;
+  color: #ffffff;
   cursor: pointer;
 }
 
 #navbar-user-button:hover {
-  color: #319df6;
+  color: #ba4423;
 }
 
 #navbar-user-button:focus {
-  color: #319df6;
+  color: #ba4423;
   outline: none;
 }
 
-.level-menu {
-	width: 30%;
-}
 
 .menu-container {
-  margin: 50px 10%;
-  display: flex;
-  flex-wrap: wrap;
+	display: grid;
+	margin: 30px;
+	margin-left: 100px;
+	margin-right: 100px;
+	grid-gap: 30px;
+	grid-template-columns: auto auto auto;
+	/*background-color: #fff;*/
+	/*color: #2a2a2a;*/
 }
-
-.level {
-  flex: 0 1 28%;
-  display: flex;
-  margin: 2px;
-  padding: 20px;
-  border: 1px solid #dadada;
-  border-radius: 2px;
-  background-color: #fff;
-}
-
-.section {
-  margin: 0;
-  padding-right: 50px;
-
-}
-
-/* .solve {
-  width: 200px;
-  height: 300px;
-}
-
-.solve-div {
-  width: 100%;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+	.level {
+		display: block;
+		background-color: rgb(111, 111, 115);
+		border-radius: 10px;
+	}
+	.section {
+		color: white;
+		margin: 10px;
+    margin-left: 15px;
+		/*padding-right: 50px;*/
+	}
+	.level-menu {
+		margin: 50px;
+		margin-left: 25%;
+		padding: 10px;
+		width: 50%;
+		border-radius: 5px;
+	}
+		.a {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.b {
+			grid-column: 2;
+			grid-row: 1;
+		}
+		.c {
+			grid-column: 3;
+			grid-row: 1;
+		}
+		.d {
+			grid-column: 1;
+			grid-row: 2;
+		}
+		.solve {
+      border: none;
+			grid-column: 2;
+			grid-row: 2/4;
+			text-align: center;
+		}
+		.e {
+			grid-column: 3;
+			grid-row: 2;
+		}
+		.f {
+			grid-column: 1;
+			grid-row: 3;
+		}
+		.g {
+			grid-column: 3;
+			grid-row: 3;
+		}
 
 .twit-icon {
   font-size: 24px;
@@ -208,7 +233,8 @@ a:focus {
 }
 
 .hidden {
-  display: none;
+	visibility: hidden;
+  /*display: none;*/
 }
 
 .modal-dialog {
