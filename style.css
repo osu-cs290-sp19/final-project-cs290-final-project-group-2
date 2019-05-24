@@ -127,6 +127,9 @@ a:focus {
         width: 50%;
         border-radius: 5px;
     }
+    .level-menu:hover {
+        background-color: white;
+    }
         .a {
             grid-column: 1;
             grid-row: 1;
@@ -148,12 +151,15 @@ a:focus {
             grid-column: 2;
             grid-row: 2/4;
             text-align: center;
+            font-size: 100px;
+            font-weight: bold;
         }
         .solve:focus {
-            /* border: none; */
-            grid-column: 2;
-            grid-row: 2/4;
-            text-align: center;
+            outline: none;
+        }
+        .solve:hover {
+            background-color: rgb(85, 85, 90);
+            cursor: pointer;
         }
         .e {
             grid-column: 3;

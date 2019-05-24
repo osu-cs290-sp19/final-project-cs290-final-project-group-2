@@ -15,6 +15,7 @@ function printOptions() {
     if(selectCount === 6) {
         console.log("BombID: ", bombId);
         sessionStorage.setItem("bombId", bombId);
+        window.location.href = 'modules.html';
     } else
         alert("Choose exactly 1 bomb");
 }
