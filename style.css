@@ -225,6 +225,9 @@ a:focus {
     position: absolute;
     top: 50%;
     left: 50%;
+    background: rgba(0,0,0,0.5);
+    border-radius: 15px;
+    padding: 2px;
     pointer-events: none;
 }
 
@@ -287,7 +290,7 @@ a:focus {
     background-color: rgba(0, 0, 0, 0.85);
 }
 
-#create-twit-modal {
+.simple-wires-modal {
     position: fixed;
     top: 0;
     bottom: 0;
