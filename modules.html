@@ -1,0 +1,137 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>The Modules</title>
+    <meta name="description" content="The Modules">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="modules.js"></script>
+    <script src="modules/button.js"></script>
+    <script src="modules/complicated_wires.js"></script>
+    <script src="modules/keypads.js"></script>
+    <script src="modules/mazes.js"></script>
+    <script src="modules/memory.js"></script>
+    <script src="modules/morse_code.js"></script>
+    <script src="modules/passwords.js"></script>
+    <script src="modules/simon_says.js"></script>
+    <script src="modules/simple_wires.js"></script>
+    <script src="modules/whos_on_first.js"></script>
+    <script src="modules/wire_sequences.js"></script>
+
+</head>
+
+<body class="darker">
+    <header>
+        <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
+        <div class="header">
+            <a href="index.html">
+            <img src="assets/header-photo.png" alt="KTANE" class="header-img">
+            </a>
+        </div>
+    </header>
+
+    <main class="module-container">
+
+        <div class="module-button" id="simple-wires">
+            <img src="assets/simple_wires.png" alt="Simple Wires" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Simple Wires</h1>
+        </div>
+
+        <div class="module-button" id="button">
+            <img src="assets/button.png" alt="The Button" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">The Button</h1>
+        </div>
+
+        <div class="module-button" id="keypads">
+            <img src="assets/keypads.png" alt="Keypads" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Keypads</h1>
+        </div>
+
+        <div class="module-button" id="simon-says">
+            <img src="assets/simon_says.png" alt="Simon Says" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Simon Says</h1>
+        </div>
+
+        <div class="module-button" id="whos-on-first">
+            <img src="assets/whos_on_first.png" alt="Who's on First?" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Who's on First</h1>
+        </div>
+
+        <div class="module-button" id="memory">
+            <img src="assets/memory.png" alt="Memory" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Memory</h1>
+        </div>
+
+        <div class="module-button" id="morse-code">
+            <img src="assets/morse_code.png" alt="Morse Code" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Morse Code</h1>
+        </div>
+
+        <div class="module-button" id="complicated-wires">
+            <img src="assets/complicated_wires.png" alt="Complicated Wires" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Complicated Wires</h1>
+        </div>
+
+        <div class="module-button" id="wire-sequence">
+            <img src="assets/wire_sequence.png" alt="Wire Sequence" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Wire Sequence</h1>
+        </div>
+
+        <div class="module-button" id="mazes">
+            <img src="assets/mazes.png" alt="Mazes" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Mazes</h1>
+        </div>
+
+        <div class="module-button" id="passwords">
+            <img src="assets/passwords.png" alt="Passwords" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Passwords</h1>
+        </div>
+
+    </main>
+
+    <div id="modal-backdrop" class="hidden"></div>
+    <div id="create-twit-modal" class="hidden">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h3>Create a Twit</h3>
+          <button type="button" class="modal-close-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="twit-input-element">
+            <label for="twit-text-input">Twit text</label>
+            <textarea id="twit-text-input"></textarea>
+          </div>
+          <div class="twit-input-element">
+            <label for="twit-attribution-input">Author</label>
+            <input type="text" id="twit-attribution-input">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="modal-cancel-button">Cancel</button>
+          <button type="button" class="modal-accept-button">Create Twit</button>
+        </div>
+
+      </div>
+    </div>
+
+</body>
+
+</html>
