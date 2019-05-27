@@ -52,7 +52,7 @@ function count_each_color() {
     }
 }
 
-function results() {
+function simple_wire_results() {
     //Tells the user which wire to cut
     count_each_color();
     if(num_of_wires === 3) {
@@ -117,7 +117,7 @@ function check_simple_wires_button(e) {
     //Check if the result button was pressed
     if(e.target.value === "result") {
         if(num_of_wires > 2 && num_of_wires < 7) {
-            results();
+            simple_wire_results();
         } else {
             alert("Either not enough wires selected or to many selected");
         }

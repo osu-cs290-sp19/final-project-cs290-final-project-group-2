@@ -8,5 +8,5 @@ window.onload = function() {
 
     //The Button
     document.getElementById("button").addEventListener("click", display_button_module);
-    document.getElementById("the-button-modal").addEventListener("click", testButton);
+    document.getElementById("the-button-modal").addEventListener("click", check_the_button);
 }
