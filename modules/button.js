@@ -57,8 +57,12 @@ function check_the_button(e) {
     //Check if the cancel button or the X was pressed
     if (temp === "cancel") {
         hide_button_module();
-        document.querySelector('input[name="color"]:checked').checked = false;
-        document.querySelector('input[name="text"]:checked').checked = false;
+        if(document.querySelector('input[name="color"]:checked')) {
+            document.querySelector('input[name="color"]:checked').checked = false;
+        }
+        if(document.querySelector('input[name="text"]:checked')) {
+            document.querySelector('input[name="text"]:checked').checked = false;
+        }
         color = "color";
         word = "word";
     }
