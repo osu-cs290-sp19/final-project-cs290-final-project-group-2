@@ -24,9 +24,9 @@ function the_button_results() {
         console.log("press and immediately release the button");
     } else if(color === "white" /*&& CAR === 1*/) {
         check_color_strip();
-    } else if(/*batteries > 2 && FRK === 1*/) {
+    } /*else if(/*batteries > 2 && FRK === 1) {
         console.log("press and immediately release the button");
-    } else if(color === "yellow") {
+    }*/ else if(color === "yellow") {
         check_color_strip();
     } else if(color === "red" && word === "hold") {
         console.log("press and immediately release the button");
