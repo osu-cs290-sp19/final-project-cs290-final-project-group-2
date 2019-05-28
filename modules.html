@@ -102,9 +102,40 @@
             <h1 class="module-text">Passwords</h1>
         </div>
 
+        <div class="module-button" id="bomb-info">
+            <img src="assets/info.png" alt="Bomb Info" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Bomb Info</h1>
+        </div>
+
     </main>
 
-    <div id="modal-backdrop" class="hidden"></div>
+    <div id="modal-backdrop" class=""></div>
+    <div id="bomb-info-modal" class="simple-wires-modal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Bomb Information</h3>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Serial: <input type="text" id="serial"></p>
+                <p>Batteries:
+                    <input type="radio" name="batteries">0</input>
+                    <input type="radio" name="batteries">1</input>
+                    <input type="radio" name="batteries" value="2">2</input>
+                    <input type="radio" name="batteries" value="3+">3+</input></p>
+                <p>Indicators:
+                    <input type="checkbox" id="frk">FRK</input>
+                    <input type="checkbox" id="car">CAR</input>
+                </p>
+                <p>Ports: <input type="checkbox" id='parallel'>Parallel Port</input></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" value="result" class="modal-accept-button">Enter</button>
+            </div>
+        </div>
+    </div>
+
     <div id="simple-wires-modal" class="simple-wires-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
@@ -119,9 +150,9 @@
                 <button type="button" value="white" class="white-simple">White</button>
 	        </div>
             <div class="modal-footer">
+                <button type="button" value="undo" class="modal-cancel-button">Undo</button>
                 <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
                 <button type="button" value="result" class="modal-accept-button">Result</button>
-                <button type="button" value="undo" class="modal-cancel-button">Undo</button>
             </div>
         </div>
     </div>
@@ -150,6 +181,23 @@
         </div>
     </div>
 
+    <div id="passwords-modal" class="simple-wires-modal hidden">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Passwords</h3>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Column 1: <input type="text" id="column1"></p>
+                <p>Column 2: <input type="text" id="column2"></p>
+                <p>Column 3: <input type="text" id="column3"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
+                <button type="button" value="result" class="modal-accept-button">Result</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
