@@ -190,6 +190,8 @@ a:focus {
     height: 225px;
     margin: 20px;
     box-shadow: 10px 10px 20px #ba4423;
+    border-radius: 15px;
+    border: solid 2px #ba4423;
     position: relative;
 }
 .module-button:hover {
@@ -208,7 +210,6 @@ a:focus {
     position: absolute;
     top: 0;
     left: 0;
-    border: solid 2px #ba4423;
     border-radius: 15px;
 }
 .shade:hover {
