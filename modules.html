@@ -186,15 +186,40 @@
                 <button type="button" value="cancel" class="modal-close-button">&times;</button>
             </div>
             <div class="modal-body">
-                <input type="radio" name="color" value="red" class="red-simple">Red</input>
-                <input type="radio" name="color" value="blue" class="blue-simple">Blue</input>
-                <input type="radio" name="color" value="yellow" class="yellow-simple">Yellow</input>
-                <input type="radio" name="color" value="white" class="white-simple">White</input>
-                <br>
-                <input type="radio" name="text" value="abort" class="red-simple">Abort</input>
-                <input type="radio" name="text" value="detonate" class="blue-simple">Detonate</input>
-                <input type="radio" name="text" value="hold" class="yellow-simple">Hold</input>
-                <input type="radio" name="text" value="press" class="yellow-simple">Press</input>
+                <label class="radio-container">
+                    <input type="radio" name="color" value="red"></input>
+                    <span class="radio-check color-radio red">Red</span>
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="color" value="blue"></input>
+                    <span class="radio-check color-radio blue">Blue</span>
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="color" value="yellow"></input>
+                    <span class="radio-check color-radio yellow">Yellow</span>
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="color" value="white"></input>
+                    <span class="radio-check color-radio white">White</span>
+                </label>
+                <br><br>
+
+                <label class="radio-container">Abort
+                    <input type="radio" name="text" value="abort"></input>
+                    <span class="radio-check"></span>
+                </label>
+                <label class="radio-container">Detonate
+                    <input type="radio" name="text" value="detonate"></input>
+                    <span class="radio-check"></span>
+                </label>
+                <label class="radio-container">Hold
+                    <input type="radio" name="text" value="hold"></input>
+                    <span class="radio-check"></span>
+                </label>
+                <label class="radio-container">Press
+                    <input type="radio" name="text" value="press"></input>
+                    <span class="radio-check"></span>
+                </label>
 	        </div>
             <div class="modal-footer">
                 <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>

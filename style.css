@@ -293,7 +293,7 @@ a:focus {
 .modal-body {
     color: white;
     font-size: 22px;
-    padding: 20px;
+    padding: 20px;s
 }
 
 input[type=text] {
@@ -349,8 +349,36 @@ input[type=radio] {
     border-radius: 50%;
 }
 
+.radio-check.color-radio {
+    width: 50px;
+    /*margin-left: 50px;*/
+
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+.radio-container input:checked ~ .radio-check.color-radio.red {
+    background-color: red;
+}
+.radio-container input:checked ~ .radio-check.color-radio.blue {
+    background-color: blue;
+}
+.radio-container input:checked ~ .radio-check.color-radio.yellow {
+    background-color: yellow;
+    color: black;
+}
+.radio-container input:checked ~ .radio-check.color-radio.white {
+    background-color: white;
+    color: black;
+}
+
+.radio-container input:checked ~ .radio-check.color-radio:after {
+    display: none;
+}
+
 .radio-container:hover input ~ .radio-check {
-  background-color: #535353;
+    background-color: #535353;
 }
 
 .radio-container input:checked ~ .radio-check {
