@@ -292,7 +292,144 @@ a:focus {
 
 .modal-body {
     color: white;
+    font-size: 22px;
     padding: 20px;
+}
+
+input[type=text] {
+    width: 150px;
+    padding: 6px 13px;
+    margin: 0px 12px;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgb(50, 50, 50);
+    box-sizing: border-box;
+    border: 3px solid white;
+    border-radius: 5px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border: 3px solid #ba4423;
+}
+
+/* ----- radio buttons ----- */
+.radio-container {
+    position: relative;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-bottom: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(50, 50, 50);
+    border: solid 2px white;
+    border-radius: 50%;
+}
+
+.radio-container:hover input ~ .radio-check {
+  background-color: #535353;
+}
+
+.radio-container input:checked ~ .radio-check {
+    background-color: #ba4423;
+}
+
+.radio-check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-container input:checked ~ .radio-check:after {
+    display: block;
+}
+
+.radio-container .radio-check:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+    background: white;
+}
+
+/* ----- checkboxes ----- */
+input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height = 0;
+    width = 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 23px;
+    width: 23px;
+    border: solid 2px white;
+    background-color: rgb(50, 50, 50);
+}
+
+.radio-container:hover input ~ .checkmark {
+    background-color: #535353;
+}
+
+.radio-container input:checked ~ .checkmark {
+    background-color: #ba4423;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.radio-container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.radio-container img {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
 }
 
 .modal-footer {

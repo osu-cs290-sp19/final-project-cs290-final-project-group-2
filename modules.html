@@ -120,15 +120,37 @@
             <div class="modal-body">
                 <p>Serial: <input type="text" id="serial"></p>
                 <p>Batteries:
-                    <input type="radio" name="batteries" value="0">0</input>
-                    <input type="radio" name="batteries" value="1">1</input>
-                    <input type="radio" name="batteries" value="2">2</input>
-                    <input type="radio" name="batteries" value="3">3+</input></p>
+                    <label class="radio-container">0
+                        <input type="radio" name="batteries" value="0"></input>
+                        <span class="radio-check"></span>
+                    </label>
+                    <label class="radio-container">1
+                        <input type="radio" name="batteries" value="1"></input>
+                        <span class="radio-check"></span>
+                    </label>
+                    <label class="radio-container">2
+                        <input type="radio" name="batteries" value="2"></input>
+                        <span class="radio-check"></span>
+                    </label>
+                    <label class="radio-container">3+
+                        <input type="radio" name="batteries" value="3"></input>
+                        <span class="radio-check"></span>
+                    </label></p>
                 <p>Indicators:
-                    <input type="checkbox" id="frk">FRK</input>
-                    <input type="checkbox" id="car">CAR</input>
+                    <label class="radio-container">FRK
+                        <input type="checkbox" id="frk"></input>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-container">CAR
+                        <input type="checkbox" id="car"></input>
+                        <span class="checkmark"></span>
+                    </label>
                 </p>
-                <p>Ports: <input type="checkbox" id='parallel'>Parallel Port</input></p>
+                <p>Ports:
+                    <label class="radio-container">Parallel Port <img src="assets/port.png" alt="Parallel Port" width=115px>
+                        <input type="checkbox" id="parallel"></input>
+                        <span class="checkmark"></span>
+                    </label></p>
             </div>
             <div class="modal-footer">
                 <button type="button" value="result" class="modal-accept-button">Enter</button>
