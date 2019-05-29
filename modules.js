@@ -18,6 +18,10 @@ window.onload = function() {
     document.getElementById('passwords').addEventListener("click", display_passwords_module);
     document.getElementById('passwords-modal').addEventListener("click", check_passwords);
 
+    //Morse Code
+    /*document.getElementById('morse-code').addEventListener("click", display_morse_code_module);
+    document.getElementById('morse-code-modal').addEventListener("click", check_morse_code); */
+
 }
 
 function display_bomb_info_module() {
