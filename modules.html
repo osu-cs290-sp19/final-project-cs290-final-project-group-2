@@ -103,7 +103,7 @@
         </div>
 
         <div class="module-button" id="bomb-info">
-            <img src="assets/info.png" alt="Bomb Info" class="module-img">
+            <img src="https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/37/2014/06/05162439/White-Square.jpg" alt="Bomb Info" class="module-img">
             <div class="shade"></div>
             <h1 class="module-text">Bomb Info</h1>
         </div>
@@ -111,7 +111,7 @@
     </main>
 
     <div id="modal-backdrop" class=""></div>
-    <div id="bomb-info-modal" class="simple-wires-modal">
+    <div id="bomb-info-modal" class="module-modal">
         <div class="modal-dialog">
             <div class="modal-header">
                 <h3>Bomb Information</h3>
@@ -120,10 +120,10 @@
             <div class="modal-body">
                 <p>Serial: <input type="text" id="serial"></p>
                 <p>Batteries:
-                    <input type="radio" name="batteries">0</input>
-                    <input type="radio" name="batteries">1</input>
+                    <input type="radio" name="batteries" value="0">0</input>
+                    <input type="radio" name="batteries" value="1">1</input>
                     <input type="radio" name="batteries" value="2">2</input>
-                    <input type="radio" name="batteries" value="3+">3+</input></p>
+                    <input type="radio" name="batteries" value="3">3+</input></p>
                 <p>Indicators:
                     <input type="checkbox" id="frk">FRK</input>
                     <input type="checkbox" id="car">CAR</input>
@@ -136,7 +136,7 @@
         </div>
     </div>
 
-    <div id="simple-wires-modal" class="simple-wires-modal hidden">
+    <div id="simple-wires-modal" class="module-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
                 <h3>Simple Wires</h3>
@@ -157,7 +157,7 @@
         </div>
     </div>
 
-    <div id="the-button-modal" class="simple-wires-modal hidden">
+    <div id="the-button-modal" class="module-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
                 <h3>The Button</h3>
@@ -181,7 +181,7 @@
         </div>
     </div>
 
-    <div id="passwords-modal" class="simple-wires-modal hidden">
+    <div id="passwords-modal" class="module-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
                 <h3>Passwords</h3>
