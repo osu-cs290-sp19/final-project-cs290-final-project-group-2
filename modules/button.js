@@ -15,18 +15,19 @@ function check_color_strip() {
     //this function will ask the user to press and hold the button and
     //ask them what color the strip is. Then will check what the user selected
     //and display the # in the timer that the button should be released
+    console.log("Check color strip");
 }
 
 function the_button_results() {
     if(color === "blue" && word === "abort") {
         check_color_strip();
-    } else if(/*batteries > 1 &&*/ word === "detonate") {
+    } else if(get_batteries() > 1 && word === "detonate") {
         console.log("press and immediately release the button");
-    } else if(color === "white" /*&& CAR === 1*/) {
+    } else if(color === "white" && get_car()) {
         check_color_strip();
-    } /*else if(/*batteries > 2 && FRK === 1) {
+    } else if(get_batteries() > 2 && get_frk()) {
         console.log("press and immediately release the button");
-    }*/ else if(color === "yellow") {
+    } else if(color === "yellow") {
         check_color_strip();
     } else if(color === "red" && word === "hold") {
         console.log("press and immediately release the button");

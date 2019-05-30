@@ -16,6 +16,15 @@ var p1 = [];
 var p2 = [];
 var p3 = [];
 
+function clear_all_password_arrays() {
+    p1 = [];
+    p2 = [];
+    p3 = [];
+    string1 = "";
+    string2 = "";
+    string3 = "";
+}
+
 function clear_password_input() {
     document.getElementById('column1').value = "";
     document.getElementById('column2').value = "";
@@ -58,6 +67,7 @@ function check_passwords(e) {
     if(e.target.value === "cancel") {
         hide_passwords_module();
         clear_password_input();
+        clear_all_password_arrays();
     }
 
     //checks if the user hits result

@@ -18,6 +18,10 @@ window.onload = function() {
     document.getElementById('passwords').addEventListener("click", display_passwords_module);
     document.getElementById('passwords-modal').addEventListener("click", check_passwords);
 
+    //Morse Code
+    /*document.getElementById('morse-code').addEventListener("click", display_morse_code_module);
+    document.getElementById('morse-code-modal').addEventListener("click", check_morse_code); */
+
 }
 
 function display_bomb_info_module() {
@@ -30,4 +34,46 @@ function bomb_info_handler(e) {
         document.getElementById("modal-backdrop").classList.add("hidden");
         document.getElementById("bomb-info-modal").classList.add("hidden");
     }
+}
+
+function get_batteries() {
+    var batteryRadios = document.getElementsByName('batteries');
+    for (var i = 0; i < batteryRadios.length; i++) {
+        if (batteryRadios[i].checked) {
+            return batteryRadios[i].value;
+        }
+    }
+}
+
+
+//bomb info helpers
+function get_frk() {
+    return document.getElementById('frk').checked;
+}
+
+function get_car() {
+    return document.getElementById('car').checked;
+}
+
+function get_serial() {
+    return document.getElementById("serial").value;
+}
+
+function get_parity() {
+    var serialString = document.getElementById("serial").value;
+    if (serialString[serialString.length - 1] % 2 === 0) {
+        return "even";
+    }
+    return "odd";
+}
+
+function has_vowel() {
+    var serial = get_serial();
+    serial = serial.toLowerCase();
+    for (var i = 0; i < 5; i++) {
+        if (serial[i] === "a" || serial[i] === "e" || serial[i] === "i" || serial[i] === "o" || serial[i] === "u") {
+            return true;
+        }
+    }
+    return false;
 }

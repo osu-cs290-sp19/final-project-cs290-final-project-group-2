@@ -8,26 +8,30 @@ function hide_simple_wire_module() {
     document.getElementById("simple-wires-modal").classList.add("hidden");
 }
 
-var simpleWiresArray = new Array(6);
+var simpleWiresArray = [];
 var num_of_wires = 0, num_red_wires = 0, num_blue_wires = 0, num_yellow_wires = 0, num_black_wires = 0, num_white_wires = 0;
+
+function reset_all_num_wires() {
+    num_of_wires = 0, num_red_wires = 0, num_blue_wires = 0, num_yellow_wires = 0, num_black_wires = 0, num_white_wires = 0;
+}
 
 function clear_simple_wires_array() {
     //This will clear all of the elements in the array
-    simpleWiresArray = new Array(6);
+    simpleWiresArray = [];
 }
 
 function undo_simple_wires_array() {
     //remove the element at the end of the array
+    if(simpleWiresArray.length > 0) {
+        simpleWiresArray.pop();
+    } else {
+        alert("Can not undo any any more because there are not more wires to undo");
+    }
 }
 
 function add_to_simple_wires_array(value) {
-    for(var i = 0; i < simpleWiresArray.length; i++) {
-        if(typeof simpleWiresArray[i] === 'undefined') {
-            simpleWiresArray[i] = value;
-            num_of_wires++;
-            return;
-        }
-    }
+    simpleWiresArray.push(value);
+    num_of_wires++;
 }
 
 function print_array() {
@@ -66,7 +70,7 @@ function simple_wire_results() {
             console.log("cut the last wire");
         }
     } else if(num_of_wires === 4) {
-        if(num_red_wires > 1 /*&& last digit of the serial number is odd*/) {
+        if(num_red_wires > 1 && get_parity() === "odd") {
             console.log("cut the last red wire");
         } else if(simpleWiresArray[num_of_wires-1] === "yellow") {
             console.log("cut the first wire");
@@ -78,7 +82,7 @@ function simple_wire_results() {
             console.log("cut the second wire");
         }
     } else if(num_of_wires === 5) {
-        if(simpleWiresArray[num_of_wires-1] === "black" /*&& last digit of the serial number is odd*/) {
+        if(simpleWiresArray[num_of_wires-1] === "black" && get_parity() === "odd") {
             console.log("cut the fourth wire");
         } else if(num_red_wires === 1 && num_yellow_wires > 1) {
             console.log("cut the first wire");
@@ -88,7 +92,7 @@ function simple_wire_results() {
             console.log("cut the first wire");
         }
     } else if(num_of_wires === 6) {
-        if(num_yellow_wires === 0 /*&& last digit of the serial number is odd*/) {
+        if(num_yellow_wires === 0 && get_parity() === "odd") {
             console.log("cut the third wire");
         } else if(num_yellow_wires === 1 && num_white_wires > 1) {
             console.log("cut the fourth wire");
@@ -118,6 +122,8 @@ function check_simple_wires_button(e) {
     if(e.target.value === "result") {
         if(num_of_wires > 2 && num_of_wires < 7) {
             simple_wire_results();
+            clear_simple_wires_array();
+            reset_all_num_wires();
         } else {
             alert("Either not enough wires selected or to many selected");
         }
@@ -127,7 +133,7 @@ function check_simple_wires_button(e) {
     if(e.target.value === "cancel") {
         clear_simple_wires_array();
         hide_simple_wire_module();
-        num_of_wires = 0; num_red_wires = 0; num_blue_wires = 0; num_yellow_wires = 0; num_black_wires = 0; num_white_wires = 0;
+        reset_all_num_wires();
     }
 
     //Check of the undo button was pressed
