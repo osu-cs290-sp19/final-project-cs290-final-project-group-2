@@ -1,0 +1,250 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>The Modules</title>
+    <meta name="description" content="The Modules">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="modules.js"></script>
+    <script src="modules/button.js"></script>
+    <script src="modules/complicated_wires.js"></script>
+    <script src="modules/keypads.js"></script>
+    <script src="modules/mazes.js"></script>
+    <script src="modules/memory.js"></script>
+    <script src="modules/morse_code.js"></script>
+    <script src="modules/passwords.js"></script>
+    <script src="modules/simon_says.js"></script>
+    <script src="modules/simple_wires.js"></script>
+    <script src="modules/whos_on_first.js"></script>
+    <script src="modules/wire_sequences.js"></script>
+
+</head>
+
+<body class="darker">
+    <header>
+        <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
+        <div class="header">
+            <a href="index.html">
+            <img src="assets/header-photo.png" alt="KTANE" class="header-img">
+            </a>
+        </div>
+    </header>
+
+    <main class="module-container">
+
+        <div class="module-button" id="simple-wires">
+            <img src="assets/simple_wires.png" alt="Simple Wires" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Simple Wires</h1>
+        </div>
+
+        <div class="module-button" id="button">
+            <img src="assets/button.png" alt="The Button" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">The Button</h1>
+        </div>
+
+        <div class="module-button" id="keypads">
+            <img src="assets/keypads.png" alt="Keypads" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Keypads</h1>
+        </div>
+
+        <div class="module-button" id="simon-says">
+            <img src="assets/simon_says.png" alt="Simon Says" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Simon Says</h1>
+        </div>
+
+        <div class="module-button" id="whos-on-first">
+            <img src="assets/whos_on_first.png" alt="Who's on First?" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Who's on First</h1>
+        </div>
+
+        <div class="module-button" id="memory">
+            <img src="assets/memory.png" alt="Memory" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Memory</h1>
+        </div>
+
+        <div class="module-button" id="morse-code">
+            <img src="assets/morse_code.png" alt="Morse Code" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Morse Code</h1>
+        </div>
+
+        <div class="module-button" id="complicated-wires">
+            <img src="assets/complicated_wires.png" alt="Complicated Wires" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Complicated Wires</h1>
+        </div>
+
+        <div class="module-button" id="wire-sequence">
+            <img src="assets/wire_sequence.png" alt="Wire Sequence" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Wire Sequence</h1>
+        </div>
+
+        <div class="module-button" id="mazes">
+            <img src="assets/mazes.png" alt="Mazes" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Mazes</h1>
+        </div>
+
+        <div class="module-button" id="passwords">
+            <img src="assets/passwords.png" alt="Passwords" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Passwords</h1>
+        </div>
+
+        <div class="module-button" id="bomb-info">
+            <img src="https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/37/2014/06/05162439/White-Square.jpg" alt="Bomb Info" class="module-img">
+            <div class="shade"></div>
+            <h1 class="module-text">Bomb Info</h1>
+        </div>
+
+    </main>
+
+    <div id="modal-backdrop" class=""></div>
+    <div id="bomb-info-modal" class="module-modal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Bomb Information</h3>
+                <button type="button" value="result" class="modal-close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Serial: <input type="text" id="serial"></p>
+                <p>Batteries:
+                    <label class="radio-container">0
+                        <input type="radio" name="batteries" value="0"></input>
+                        <span class="radio-check"></span>
+                    </label>
+                    <label class="radio-container">1
+                        <input type="radio" name="batteries" value="1"></input>
+                        <span class="radio-check"></span>
+                    </label>
+                    <label class="radio-container">2
+                        <input type="radio" name="batteries" value="2"></input>
+                        <span class="radio-check"></span>
+                    </label>
+                    <label class="radio-container">3+
+                        <input type="radio" name="batteries" value="3"></input>
+                        <span class="radio-check"></span>
+                    </label></p>
+                <p>Indicators:
+                    <label class="radio-container">FRK
+                        <input type="checkbox" id="frk"></input>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-container">CAR
+                        <input type="checkbox" id="car"></input>
+                        <span class="checkmark"></span>
+                    </label>
+                </p>
+                <p>Ports:
+                    <label class="radio-container">Parallel Port <img src="assets/port.png" alt="Parallel Port" width=115px>
+                        <input type="checkbox" id="parallel"></input>
+                        <span class="checkmark"></span>
+                    </label></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" value="result" class="modal-accept-button">Enter</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="simple-wires-modal" class="module-modal hidden">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Simple Wires</h3>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button type="button" value="red" class="red-simple">Red</button>
+                <button type="button" value="blue" class="blue-simple">Blue</button>
+                <button type="button" value="yellow" class="yellow-simple">Yellow</button>
+                <button type="button" value="black" class="black-simple">Black</button>
+                <button type="button" value="white" class="white-simple">White</button>
+	        </div>
+            <div class="modal-footer">
+                <button type="button" value="undo" class="modal-cancel-button">Undo</button>
+                <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
+                <button type="button" value="result" class="modal-accept-button">Result</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="the-button-modal" class="module-modal hidden">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>The Button</h3>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label class="radio-container">
+                    <input type="radio" name="color" value="red"></input>
+                    <span class="radio-check color-radio red">Red</span>
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="color" value="blue"></input>
+                    <span class="radio-check color-radio blue">Blue</span>
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="color" value="yellow"></input>
+                    <span class="radio-check color-radio yellow">Yellow</span>
+                </label>
+                <label class="radio-container">
+                    <input type="radio" name="color" value="white"></input>
+                    <span class="radio-check color-radio white">White</span>
+                </label>
+                <br><br>
+
+                <label class="radio-container">Abort
+                    <input type="radio" name="text" value="abort"></input>
+                    <span class="radio-check"></span>
+                </label>
+                <label class="radio-container">Detonate
+                    <input type="radio" name="text" value="detonate"></input>
+                    <span class="radio-check"></span>
+                </label>
+                <label class="radio-container">Hold
+                    <input type="radio" name="text" value="hold"></input>
+                    <span class="radio-check"></span>
+                </label>
+                <label class="radio-container">Press
+                    <input type="radio" name="text" value="press"></input>
+                    <span class="radio-check"></span>
+                </label>
+	        </div>
+            <div class="modal-footer">
+                <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
+                <button type="button" value="result" class="modal-accept-button">Result</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="passwords-modal" class="module-modal hidden">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Passwords</h3>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Column 1: <input type="text" id="column1"></p>
+                <p>Column 2: <input type="text" id="column2"></p>
+                <p>Column 3: <input type="text" id="column3"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
+                <button type="button" value="result" class="modal-accept-button">Result</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
