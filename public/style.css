@@ -251,7 +251,7 @@ a:focus {
     left: 0;
     right: 0;
     z-index: 1010;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 .modal-dialog {
@@ -294,6 +294,86 @@ a:focus {
     color: white;
     font-size: 22px;
     padding: 20px;s
+}
+
+#wire-container {
+    position: relative;
+}
+
+.wires-img {
+    height: 200px;
+    z-index: 0;
+    position: absolute;
+}
+
+#actual-wire-container {
+    position: absolute;
+    z-index: 10;
+}
+
+.red-simple-wire {
+    position: static;
+    width: 130px;
+    height: 8px;
+    top: 7px;
+    left: 6px;
+    margin: 15px;
+    margin-left: 13px;
+    margin-bottom: 23px;
+    border-radius: 3px;
+    background-color: #FE0E0A;
+}
+
+.white-simple-wire {
+    position: static;
+    width: 130px;
+    height: 8px;
+    top: 7px;
+    left: 6px;
+    margin: 15px;
+    margin-left: 13px;
+    margin-bottom: 23px;
+    border-radius: 3px;
+    background-color: #FFFAE9;
+}
+
+.blue-simple-wire {
+    position: static;
+    width: 130px;
+    height: 8px;
+    top: 7px;
+    left: 6px;
+    margin: 15px;
+    margin-left: 13px;
+    margin-bottom: 23px;
+    border-radius: 3px;
+    background-color: #3044B1;
+}
+
+.yellow-simple-wire {
+    position: static;
+    width: 130px;
+    height: 8px;
+    top: 7px;
+    left: 6px;
+    margin: 15px;
+    margin-left: 13px;
+    margin-bottom: 23px;
+    border-radius: 3px;
+    background-color: #FFFF21;
+}
+
+.black-simple-wire {
+    position: static;
+    width: 130px;
+    height: 8px;
+    top: 7px;
+    left: 6px;
+    margin: 15px;
+    margin-left: 13px;
+    margin-bottom: 23px;
+    border-radius: 3px;
+    background-color: #020202;
 }
 
 input[type=text] {

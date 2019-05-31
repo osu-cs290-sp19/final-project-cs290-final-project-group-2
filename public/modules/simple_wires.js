@@ -112,12 +112,16 @@ function check_simple_wires_button(e) {
         show_simple_wires_chosen("red-simple-wire");
     } else if(e.target.value === "blue") {
         add_to_simple_wires_array(e.target.value);
+        show_simple_wires_chosen("blue-simple-wire");
     } else if(e.target.value === "yellow") {
         add_to_simple_wires_array(e.target.value);
+        show_simple_wires_chosen("yellow-simple-wire");
     } else if(e.target.value === "black") {
         add_to_simple_wires_array(e.target.value);
+        show_simple_wires_chosen("black-simple-wire");
     } else if(e.target.value === "white") {
         add_to_simple_wires_array(e.target.value);
+        show_simple_wires_chosen("white-simple-wire");
     }
 
     //Check if the result button was pressed
@@ -162,7 +166,7 @@ function show_simple_wire_results(string) {
 }
 
 function show_simple_wires_chosen(string) {
-    var wireContainer = document.getElementById("wire-container");
+    var wireContainer = document.getElementById("actual-wire-container");
 
     var simpleWireDiv = document.createElement("div");
     simpleWireDiv.classList.add(string);
