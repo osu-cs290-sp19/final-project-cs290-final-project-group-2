@@ -235,9 +235,9 @@
                 <button type="button" value="cancel" class="modal-close-button">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Column 1: <input type="text" id="column1"></p>
-                <p>Column 2: <input type="text" id="column2"></p>
-                <p>Column 3: <input type="text" id="column3"></p>
+                <p>Column 1: <input type="text" id="column1" maxlength="6" oninput="autotab(this, document.getElementById('column2'))"></p>
+                <p>Column 2: <input type="text" id="column2" maxlength="6" oninput="autotab(this, document.getElementById('column3'))"></p>
+                <p>Column 3: <input type="text" id="column3" maxlength="6"></p>
             </div>
             <div class="modal-footer">
                 <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
