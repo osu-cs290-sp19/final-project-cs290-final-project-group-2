@@ -61,7 +61,8 @@ function simple_wire_results() {
     count_each_color();
     if(num_of_wires === 3) {
         if(num_red_wires === 0) {
-            console.log("cut the second wire");
+            // console.log("cut the second wire");
+            show_simple_wire_results("cut the second wire");
         } else if(simpleWiresArray[num_of_wires-1] === "white") {
             console.log("cut the last wire");
         } else if(num_blue_wires > 1) {
@@ -108,6 +109,7 @@ function check_simple_wires_button(e) {
     //Check which color button was pressed
     if(e.target.value === "red") {
         add_to_simple_wires_array(e.target.value);
+        show_simple_wires_chosen("red-simple-wire");
     } else if(e.target.value === "blue") {
         add_to_simple_wires_array(e.target.value);
     } else if(e.target.value === "yellow") {
@@ -134,6 +136,7 @@ function check_simple_wires_button(e) {
         clear_simple_wires_array();
         hide_simple_wire_module();
         reset_all_num_wires();
+        document.getElementsByClassName("simple-wires-result")[0].remove();
     }
 
     //Check of the undo button was pressed
@@ -142,4 +145,27 @@ function check_simple_wires_button(e) {
     }
 
     print_array();
+}
+
+//showing stuff to the screen
+
+
+function show_simple_wire_results(string) {
+    var modalBody = document.getElementsByClassName("modal-body")[1];
+
+    var simpleWiresResults = document.createElement("p");
+    simpleWiresResults.classList.add("simple-wires-result");
+    simpleWiresResults.textContent = string;
+    console.log(modalBody);
+
+    modalBody.appendChild(simpleWiresResults);
+}
+
+function show_simple_wires_chosen(string) {
+    var wireContainer = document.getElementById("wire-container");
+
+    var simpleWireDiv = document.createElement("div");
+    simpleWireDiv.classList.add(string);
+    wireContainer.appendChild(simpleWireDiv);
+    console.log(simpleWireDiv);
 }
