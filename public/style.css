@@ -293,7 +293,14 @@ a:focus {
 .modal-body {
     color: white;
     font-size: 22px;
-    padding: 20px;s
+    padding: 20px;
+}
+
+.simple-modal-body {
+    color: white;
+    font-size: 22px;
+    padding: 20px;
+    display: flex;
 }
 
 #wire-container {
@@ -374,6 +381,10 @@ a:focus {
     margin-bottom: 23px;
     border-radius: 3px;
     background-color: #020202;
+}
+
+.simple-wires-result {
+    position: static;
 }
 
 input[type=text] {
