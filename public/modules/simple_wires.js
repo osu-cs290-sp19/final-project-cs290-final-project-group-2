@@ -25,7 +25,7 @@ function undo_simple_wires_array() {
     if(simpleWiresArray.length > 0) {
         simpleWiresArray.pop();
     } else {
-        alert("Can not undo any any more because there are not more wires to undo");
+        alert("No wires to undo because there are no wires selected");
     }
 }
 
@@ -61,46 +61,45 @@ function simple_wire_results() {
     count_each_color();
     if(num_of_wires === 3) {
         if(num_red_wires === 0) {
-            // console.log("cut the second wire");
             show_simple_wire_results("cut the second wire");
         } else if(simpleWiresArray[num_of_wires-1] === "white") {
-            console.log("cut the last wire");
+            show_simple_wire_results("cut the last wire");
         } else if(num_blue_wires > 1) {
-            console.log("cut the last blue wire");
+            show_simple_wire_results("cut the last blue wire");
         } else {
-            console.log("cut the last wire");
+            show_simple_wire_results("cut the last wire");
         }
     } else if(num_of_wires === 4) {
         if(num_red_wires > 1 && get_parity() === "odd") {
-            console.log("cut the last red wire");
+            show_simple_wire_results("cut the last red wire");
         } else if(simpleWiresArray[num_of_wires-1] === "yellow") {
-            console.log("cut the first wire");
+            show_simple_wire_results("cut the first wire");
         } else if(num_blue_wires === 1) {
-            console.log("cut the first wire");
+            show_simple_wire_results("cut the first wire");
         } else if(num_yellow_wires > 1) {
-            console.log("cut the last wire");
+            show_simple_wire_results("cut the last wire");
         } else {
-            console.log("cut the second wire");
+            show_simple_wire_results("cut the second wire");
         }
     } else if(num_of_wires === 5) {
         if(simpleWiresArray[num_of_wires-1] === "black" && get_parity() === "odd") {
-            console.log("cut the fourth wire");
+            show_simple_wire_results("cut the fourth wire");
         } else if(num_red_wires === 1 && num_yellow_wires > 1) {
-            console.log("cut the first wire");
+            show_simple_wire_results("cut the first wire");
         } else if(num_black_wires === 0) {
-            console.log("cut the second wire");
+            show_simple_wire_results("cut the second wire");
         } else {
-            console.log("cut the first wire");
+            show_simple_wire_results("cut the first wire");
         }
     } else if(num_of_wires === 6) {
         if(num_yellow_wires === 0 && get_parity() === "odd") {
-            console.log("cut the third wire");
+            show_simple_wire_results("cut the third wire");
         } else if(num_yellow_wires === 1 && num_white_wires > 1) {
-            console.log("cut the fourth wire");
+            show_simple_wire_results("cut the fourth wire");
         } else if(num_red_wires === 0) {
-            console.log("cut the last wire");
+            show_simple_wire_results("cut the last wire");
         } else {
-            console.log("cut the fourth wire");
+            show_simple_wire_results("cut the fourth wire");
         }
     }
 }
@@ -130,6 +129,7 @@ function check_simple_wires_button(e) {
             simple_wire_results();
             clear_simple_wires_array();
             reset_all_num_wires();
+            remove_simple_wires_chosen();
         } else {
             alert("Either not enough wires selected or to many selected");
         }
@@ -140,29 +140,34 @@ function check_simple_wires_button(e) {
         clear_simple_wires_array();
         hide_simple_wire_module();
         reset_all_num_wires();
-        document.getElementsByClassName("simple-wires-result")[0].remove();
+        remove_simple_wire_results();
+        remove_simple_wires_chosen();
     }
 
     //Check of the undo button was pressed
     if(e.target.value === "undo") {
         undo_simple_wires_array();
+        undo_simple_wires_chosen();
+        num_of_wires--;
     }
-
-    print_array();
 }
 
 //showing stuff to the screen
 
-
 function show_simple_wire_results(string) {
-    var modalBody = document.getElementsByClassName("modal-body")[1];
+    var modalBody = document.getElementsByClassName("simple-modal-body")[0];
 
     var simpleWiresResults = document.createElement("p");
     simpleWiresResults.classList.add("simple-wires-result");
     simpleWiresResults.textContent = string;
-    console.log(modalBody);
 
     modalBody.appendChild(simpleWiresResults);
+}
+
+function remove_simple_wire_results() {
+    if(document.getElementsByClassName("simple-wires-result")[0]) {
+        document.getElementsByClassName("simple-wires-result")[0].remove();
+    }
 }
 
 function show_simple_wires_chosen(string) {
@@ -170,6 +175,19 @@ function show_simple_wires_chosen(string) {
 
     var simpleWireDiv = document.createElement("div");
     simpleWireDiv.classList.add(string);
-    wireContainer.appendChild(simpleWireDiv);
-    console.log(simpleWireDiv);
+    wireContainer.appendChild(simpleWireDiv)
+}
+
+function undo_simple_wires_chosen() {
+    var actualWireContainer = document.getElementById("actual-wire-container");
+    if(actualWireContainer.childNodes.length > 1) {
+        actualWireContainer.removeChild(actualWireContainer.childNodes[simpleWiresArray.length+1]);
+    }
+}
+
+function remove_simple_wires_chosen() {
+    var actualWireContainer = document.getElementById("actual-wire-container");
+    while(actualWireContainer.childNodes.length > 1) {
+        actualWireContainer.removeChild(actualWireContainer.childNodes[simpleWiresArray.length+1]);
+    }
 }
