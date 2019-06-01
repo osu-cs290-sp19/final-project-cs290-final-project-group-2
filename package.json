@@ -1,32 +1,29 @@
 {
-  "name": "KTANE_Defuser",
+  "name": "final-project-cs290-final-project-group-2",
   "version": "1.0.0",
-  "description": "Asynchronous communication between client and server... maybe",
-  "main": "server.js",
-  "scripts": {
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node server.js",
-      "dev": "nodemon server.js"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/osu-cs290-sp19/final-project-cs290-final-project-group-2.git"
-    },
-    "author": "ALexander Rash",
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/osu-cs290-sp19/final-project-cs290-final-project-group-2/issues"
-    },
-    "homepage": "https://github.com/osu-cs290-sp19/final-project-cs290-final-project-group-2#readme",
-    "dependencies": {
-      "express": "^4.17.1"
-    },
-    "devDependencies": {
-      "nodemon": "^1.19.1"
-    }
-  },
+  "description": "KTANE defusing application with communication between client and server.",
+  "main": "index.js",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-sp19/final-project-cs290-final-project-group-2.git"
+  },
+  "keywords": [
+    "KTANE",
+    "data",
+    "application",
+    "defusal"
+  ],
+  "author": "Alex Rash, Gatlin Andrews, Ryan Russell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-sp19/final-project-cs290-final-project-group-2/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-sp19/final-project-cs290-final-project-group-2#readme"
 }
