@@ -61,45 +61,45 @@ function simple_wire_results() {
     count_each_color();
     if(num_of_wires === 3) {
         if(num_red_wires === 0) {
-            show_simple_wire_results("cut the second wire");
+            show_simple_wire_results("Cut the second wire");
         } else if(simpleWiresArray[num_of_wires-1] === "white") {
-            show_simple_wire_results("cut the last wire");
+            show_simple_wire_results("Cut the last wire");
         } else if(num_blue_wires > 1) {
-            show_simple_wire_results("cut the last blue wire");
+            show_simple_wire_results("Cut the last blue wire");
         } else {
-            show_simple_wire_results("cut the last wire");
+            show_simple_wire_results("Cut the last wire");
         }
     } else if(num_of_wires === 4) {
         if(num_red_wires > 1 && get_parity() === "odd") {
-            show_simple_wire_results("cut the last red wire");
+            show_simple_wire_results("Cut the last red wire");
         } else if(simpleWiresArray[num_of_wires-1] === "yellow") {
-            show_simple_wire_results("cut the first wire");
+            show_simple_wire_results("Cut the first wire");
         } else if(num_blue_wires === 1) {
-            show_simple_wire_results("cut the first wire");
+            show_simple_wire_results("Cut the first wire");
         } else if(num_yellow_wires > 1) {
-            show_simple_wire_results("cut the last wire");
+            show_simple_wire_results("Cut the last wire");
         } else {
-            show_simple_wire_results("cut the second wire");
+            show_simple_wire_results("Cut the second wire");
         }
     } else if(num_of_wires === 5) {
         if(simpleWiresArray[num_of_wires-1] === "black" && get_parity() === "odd") {
-            show_simple_wire_results("cut the fourth wire");
+            show_simple_wire_results("Cut the fourth wire");
         } else if(num_red_wires === 1 && num_yellow_wires > 1) {
-            show_simple_wire_results("cut the first wire");
+            show_simple_wire_results("Cut the first wire");
         } else if(num_black_wires === 0) {
-            show_simple_wire_results("cut the second wire");
+            show_simple_wire_results("Cut the second wire");
         } else {
-            show_simple_wire_results("cut the first wire");
+            show_simple_wire_results("Cut the first wire");
         }
     } else if(num_of_wires === 6) {
         if(num_yellow_wires === 0 && get_parity() === "odd") {
-            show_simple_wire_results("cut the third wire");
+            show_simple_wire_results("Cut the third wire");
         } else if(num_yellow_wires === 1 && num_white_wires > 1) {
-            show_simple_wire_results("cut the fourth wire");
+            show_simple_wire_results("Cut the fourth wire");
         } else if(num_red_wires === 0) {
-            show_simple_wire_results("cut the last wire");
+            show_simple_wire_results("Cut the last wire");
         } else {
-            show_simple_wire_results("cut the fourth wire");
+            show_simple_wire_results("Cut the fourth wire");
         }
     }
 }
@@ -108,19 +108,19 @@ function check_simple_wires_button(e) {
     //Check which color button was pressed
     if(e.target.value === "red") {
         add_to_simple_wires_array(e.target.value);
-        show_simple_wires_chosen("red-simple-wire");
+        show_simple_wires_chosen("red");
     } else if(e.target.value === "blue") {
         add_to_simple_wires_array(e.target.value);
-        show_simple_wires_chosen("blue-simple-wire");
+        show_simple_wires_chosen("blue");
     } else if(e.target.value === "yellow") {
         add_to_simple_wires_array(e.target.value);
-        show_simple_wires_chosen("yellow-simple-wire");
+        show_simple_wires_chosen("yellow");
     } else if(e.target.value === "black") {
         add_to_simple_wires_array(e.target.value);
-        show_simple_wires_chosen("black-simple-wire");
+        show_simple_wires_chosen("black");
     } else if(e.target.value === "white") {
         add_to_simple_wires_array(e.target.value);
-        show_simple_wires_chosen("white-simple-wire");
+        show_simple_wires_chosen("white");
     }
 
     //Check if the result button was pressed
@@ -131,7 +131,7 @@ function check_simple_wires_button(e) {
             reset_all_num_wires();
             remove_simple_wires_chosen();
         } else {
-            alert("Either not enough wires selected or to many selected");
+            alert("Either not enough wires selected or too many selected");
         }
     }
 
@@ -174,6 +174,7 @@ function show_simple_wires_chosen(string) {
     var wireContainer = document.getElementById("actual-wire-container");
 
     var simpleWireDiv = document.createElement("div");
+    simpleWireDiv.classList.add("simple-wire")
     simpleWireDiv.classList.add(string);
     wireContainer.appendChild(simpleWireDiv)
 }

@@ -303,6 +303,16 @@ a:focus {
     display: flex;
 }
 
+.simple-buttons {
+    display: grid;
+    /* align-items: center; */
+}
+
+.simple-wires-result {
+    margin-left: auto;
+    margin-right: 40px;
+}
+
 #wire-container {
     position: relative;
 }
@@ -318,7 +328,7 @@ a:focus {
     z-index: 10;
 }
 
-.red-simple-wire {
+.simple-wire {
     position: static;
     width: 130px;
     height: 8px;
@@ -328,59 +338,50 @@ a:focus {
     margin-left: 13px;
     margin-bottom: 23px;
     border-radius: 3px;
-    background-color: #FE0E0A;
 }
 
-.white-simple-wire {
-    position: static;
-    width: 130px;
-    height: 8px;
-    top: 7px;
-    left: 6px;
-    margin: 15px;
-    margin-left: 13px;
-    margin-bottom: 23px;
-    border-radius: 3px;
+.simple-button {
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-right: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.simple-button:hover {
+    box-shadow: 0 0 0 2pt #ba4423;
+}
+
+.simple-button:focus {
+    outline: none;
+}
+
+.red {
+    background-color: #FE0E0A;
+    color: white;
+}
+
+.white {
     background-color: #FFFAE9;
 }
 
-.blue-simple-wire {
-    position: static;
-    width: 130px;
-    height: 8px;
-    top: 7px;
-    left: 6px;
-    margin: 15px;
-    margin-left: 13px;
-    margin-bottom: 23px;
-    border-radius: 3px;
+.blue {
     background-color: #3044B1;
+    color: white;
 }
 
-.yellow-simple-wire {
-    position: static;
-    width: 130px;
-    height: 8px;
-    top: 7px;
-    left: 6px;
-    margin: 15px;
-    margin-left: 13px;
-    margin-bottom: 23px;
-    border-radius: 3px;
+.yellow {
     background-color: #FFFF21;
 }
 
-.black-simple-wire {
-    position: static;
-    width: 130px;
-    height: 8px;
-    top: 7px;
-    left: 6px;
-    margin: 15px;
-    margin-left: 13px;
-    margin-bottom: 23px;
-    border-radius: 3px;
+.black {
     background-color: #020202;
+    color: white;
 }
 
 .simple-wires-result {
@@ -443,7 +444,6 @@ input[type=radio] {
 .radio-check.color-radio {
     width: 50px;
     /*margin-left: 50px;*/
-
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
