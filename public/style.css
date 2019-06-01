@@ -251,7 +251,7 @@ a:focus {
     left: 0;
     right: 0;
     z-index: 1010;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 .modal-dialog {
@@ -293,7 +293,99 @@ a:focus {
 .modal-body {
     color: white;
     font-size: 22px;
-    padding: 20px;s
+    padding: 20px;
+}
+
+.simple-modal-body {
+    color: white;
+    font-size: 22px;
+    padding: 20px;
+    display: flex;
+}
+
+.simple-buttons {
+    display: grid;
+    /* align-items: center; */
+}
+
+.simple-wires-result {
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+#wire-container {
+    position: relative;
+}
+
+.wires-img {
+    height: 200px;
+    z-index: 0;
+    position: absolute;
+}
+
+#actual-wire-container {
+    position: absolute;
+    z-index: 10;
+}
+
+.simple-wire {
+    position: static;
+    width: 130px;
+    height: 8px;
+    top: 7px;
+    left: 6px;
+    margin: 15px;
+    margin-left: 13px;
+    margin-bottom: 23px;
+    border-radius: 3px;
+}
+
+.simple-button {
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-right: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.simple-button:hover {
+    box-shadow: 0 0 0 2pt #ba4423;
+}
+
+.simple-button:focus {
+    outline: none;
+}
+
+.red {
+    background-color: #FE0E0A;
+    color: white;
+}
+
+.white {
+    background-color: #FFFAE9;
+}
+
+.blue {
+    background-color: #3044B1;
+    color: white;
+}
+
+.yellow {
+    background-color: #FFFF21;
+}
+
+.black {
+    background-color: #020202;
+    color: white;
+}
+
+.simple-wires-result {
+    position: static;
 }
 
 input[type=text] {
@@ -352,7 +444,6 @@ input[type=radio] {
 .radio-check.color-radio {
     width: 50px;
     /*margin-left: 50px;*/
-
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;

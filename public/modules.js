@@ -77,3 +77,9 @@ function has_vowel() {
     }
     return false;
 }
+
+function autotab(current,to) {
+    if (current.getAttribute && current.value.length==current.getAttribute("maxlength")) {
+        to.focus();
+    }
+}
