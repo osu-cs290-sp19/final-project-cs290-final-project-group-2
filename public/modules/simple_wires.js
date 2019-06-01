@@ -126,6 +126,7 @@ function check_simple_wires_button(e) {
     //Check if the result button was pressed
     if(e.target.value === "result") {
         if(num_of_wires > 2 && num_of_wires < 7) {
+            remove_simple_wire_results();
             simple_wire_results();
             clear_simple_wires_array();
             reset_all_num_wires();
