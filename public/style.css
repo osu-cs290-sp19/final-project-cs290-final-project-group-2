@@ -593,6 +593,25 @@ input[type=checkbox] {
     background-color: #96351a;
 }
 
+.not-found-title {
+    color: white;
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.not-found-subtitle {
+    color: white;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
 /* .twit-icon {
 font-size: 24px;
 }
