@@ -2,7 +2,7 @@
   "name": "final-project-cs290-final-project-group-2",
   "version": "1.0.0",
   "description": "KTANE defusing application with communication between client and server.",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1"
   },
