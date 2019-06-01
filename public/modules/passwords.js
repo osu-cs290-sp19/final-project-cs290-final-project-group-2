@@ -31,9 +31,29 @@ function clear_password_input() {
     document.getElementById('column3').value = "";
 }
 
+function remove_password_results() {
+    if(document.getElementsByClassName("passwords-result")) {
+        var passwordsBody = document.getElementsByClassName("passwords-result");
+        for (var i = 0; i < passwordsBody.length; i++) {
+            passwordsBody[i].remove();
+            remove_password_results();
+        }
+    }
+}
+
+function show_password(pw) {
+    var passwordsBody = document.getElementsByClassName("passwords-container")[0];
+
+    var passwordsResult = document.createElement("p");
+    passwordsResult.textContent = pw;
+    passwordsResult.classList.add("passwords-result");
+    passwordsBody.appendChild(passwordsResult);
+}
+
 function print_the_password() {
     for(var i = 0; i < p3.length; i++) {
         console.log(p3[i]);
+        show_password(p3[i]);
     }
 }
 
@@ -68,6 +88,7 @@ function check_passwords(e) {
         hide_passwords_module();
         clear_password_input();
         clear_all_password_arrays();
+        remove_password_results();
     }
 
     //checks if the user hits result
