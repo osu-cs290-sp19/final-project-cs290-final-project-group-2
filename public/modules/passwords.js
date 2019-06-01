@@ -1,6 +1,7 @@
 function display_passwords_module() {
     document.getElementById("modal-backdrop").classList.remove("hidden");
     document.getElementById("passwords-modal").classList.remove("hidden");
+    document.getElementById("column1").focus();
 }
 
 function hide_passwords_module() {
