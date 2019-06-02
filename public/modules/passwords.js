@@ -98,7 +98,9 @@ function check_passwords(e) {
         string2 = document.getElementById('column2').value;
         string3 = document.getElementById('column3').value;
         if(string1.length === 6 && string2.length === 6 && string3.length === 6) {
+            remove_password_results();
             find_password();
+            clear_all_password_arrays();
         } else {
             alert("You may have not entered enough letters per input box, there must be 6 per box");
         }
