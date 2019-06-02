@@ -593,9 +593,9 @@ input[type=checkbox] {
     background-color: #96351a;
 }
 
-.not-found-title {
+.not-found {
     color: white;
-    font-size: 60px;
+    /* font-size: 60px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -603,13 +603,19 @@ input[type=checkbox] {
     margin-top: 150px;
 }
 
-.not-found-subtitle {
-    color: white;
+.title {
+    font-size: 60px;
+}
+
+.subtitle {
     font-size: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    margin: 0;
+}
+
+.message {
+    color: #2f2f33;
+    font-size: 14px;
+    margin-top: 20px;
 }
 
 /* .twit-icon {
