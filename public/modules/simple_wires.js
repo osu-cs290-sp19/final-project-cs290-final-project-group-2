@@ -24,6 +24,7 @@ function undo_simple_wires_array() {
     //remove the element at the end of the array
     if(simpleWiresArray.length > 0) {
         simpleWiresArray.pop();
+        num_of_wires--;
     } else {
         alert("No wires to undo because there are no wires selected");
     }
@@ -150,7 +151,6 @@ function check_simple_wires_button(e) {
     if(e.target.value === "undo") {
         undo_simple_wires_array();
         undo_simple_wires_chosen();
-        num_of_wires--;
     }
 }
 
