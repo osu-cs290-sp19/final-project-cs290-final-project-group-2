@@ -94,4 +94,5 @@ function autotab(current,to) {
 //Solved button
 function bomb_complete() {
     //this will do something at somepoint test
+    window.location.href = 'index.html'; //this should be the last line
 }
