@@ -400,6 +400,16 @@ a:focus {
     position: static;
 }
 
+.button-color {
+    display: grid;
+}
+
+.button-text label{
+    display: grid;
+    margin-left: 25px;
+    padding: 0px 30px;
+}
+
 input[type=text] {
     width: 150px;
     padding: 6px 13px;
