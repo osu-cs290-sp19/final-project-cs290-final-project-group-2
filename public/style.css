@@ -77,11 +77,14 @@ a:focus {
     background-color: #0c0c0e;
     border: 1px solid #dadada;
     border-radius: 2px;
+    text-transform: none;
+    text-align: justify;
 }
 
 #navbar-user-input:focus {
     outline: none;
     background-color: #fff;
+    color: black;    
 }
 
 #navbar-user-button {
