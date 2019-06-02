@@ -1,6 +1,7 @@
 function display_passwords_module() {
     document.getElementById("modal-backdrop").classList.remove("hidden");
     document.getElementById("passwords-modal").classList.remove("hidden");
+    document.getElementById("column1").focus();
 }
 
 function hide_passwords_module() {
@@ -31,9 +32,29 @@ function clear_password_input() {
     document.getElementById('column3').value = "";
 }
 
+function remove_password_results() {
+    if(document.getElementsByClassName("passwords-result")) {
+        var passwordsBody = document.getElementsByClassName("passwords-result");
+        for (var i = 0; i < passwordsBody.length; i++) {
+            passwordsBody[i].remove();
+            remove_password_results();
+        }
+    }
+}
+
+function show_password(pw) {
+    var passwordsBody = document.getElementsByClassName("passwords-container")[0];
+
+    var passwordsResult = document.createElement("p");
+    passwordsResult.textContent = pw;
+    passwordsResult.classList.add("passwords-result");
+    passwordsBody.appendChild(passwordsResult);
+}
+
 function print_the_password() {
     for(var i = 0; i < p3.length; i++) {
         console.log(p3[i]);
+        show_password(p3[i]);
     }
 }
 
@@ -68,6 +89,7 @@ function check_passwords(e) {
         hide_passwords_module();
         clear_password_input();
         clear_all_password_arrays();
+        remove_password_results();
     }
 
     //checks if the user hits result
@@ -76,7 +98,9 @@ function check_passwords(e) {
         string2 = document.getElementById('column2').value;
         string3 = document.getElementById('column3').value;
         if(string1.length === 6 && string2.length === 6 && string3.length === 6) {
+            remove_password_results();
             find_password();
+            clear_all_password_arrays();
         } else {
             alert("You may have not entered enough letters per input box, there must be 6 per box");
         }

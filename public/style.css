@@ -251,7 +251,7 @@ a:focus {
     left: 0;
     right: 0;
     z-index: 1010;
-    /*overflow: scroll;*/
+    overflow: auto;
 }
 
 .modal-dialog {
@@ -303,9 +303,21 @@ a:focus {
     display: flex;
 }
 
+.passwords-container {
+    float: right;
+    margin-left: 120px;
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+.passwords-result {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .simple-buttons {
     display: grid;
-    /* align-items: center; */
 }
 
 .simple-wires-result {
@@ -386,6 +398,34 @@ a:focus {
 
 .simple-wires-result {
     position: static;
+}
+
+.button-color {
+    display: grid;
+}
+
+.button-color label {
+    padding-bottom: 32px;
+}
+
+.button-text label{
+    display: grid;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    padding: 0px 30px;
+}
+
+.the-button-result {
+    display: grid;
+}
+
+.the-button-result .simple-wires-result {
+    margin: 0px;
+}
+
+.color-strip-img {
+    margin-left: 43px;
+    height: 55px;
 }
 
 input[type=text] {
@@ -579,6 +619,31 @@ input[type=checkbox] {
 
 .modal-footer .modal-accept-button:hover {
     background-color: #96351a;
+}
+
+.not-found {
+    color: white;
+    /* font-size: 60px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.title {
+    font-size: 60px;
+}
+
+.subtitle {
+    font-size: 40px;
+    margin: 0;
+}
+
+.message {
+    color: #2f2f33;
+    font-size: 14px;
+    margin-top: 20px;
 }
 
 /* .twit-icon {

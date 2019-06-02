@@ -24,6 +24,7 @@ function undo_simple_wires_array() {
     //remove the element at the end of the array
     if(simpleWiresArray.length > 0) {
         simpleWiresArray.pop();
+        num_of_wires--;
     } else {
         alert("No wires to undo because there are no wires selected");
     }
@@ -106,19 +107,20 @@ function simple_wire_results() {
 
 function check_simple_wires_button(e) {
     //Check which color button was pressed
-    if(e.target.value === "red") {
+    var len = simpleWiresArray.length;
+    if(e.target.value === "red" && len < 6) {
         add_to_simple_wires_array(e.target.value);
         show_simple_wires_chosen("red");
-    } else if(e.target.value === "blue") {
+    } else if(e.target.value === "blue" && len < 6) {
         add_to_simple_wires_array(e.target.value);
         show_simple_wires_chosen("blue");
-    } else if(e.target.value === "yellow") {
+    } else if(e.target.value === "yellow" && len < 6) {
         add_to_simple_wires_array(e.target.value);
         show_simple_wires_chosen("yellow");
-    } else if(e.target.value === "black") {
+    } else if(e.target.value === "black" && len < 6) {
         add_to_simple_wires_array(e.target.value);
         show_simple_wires_chosen("black");
-    } else if(e.target.value === "white") {
+    } else if(e.target.value === "white" && len < 6) {
         add_to_simple_wires_array(e.target.value);
         show_simple_wires_chosen("white");
     }
@@ -126,6 +128,7 @@ function check_simple_wires_button(e) {
     //Check if the result button was pressed
     if(e.target.value === "result") {
         if(num_of_wires > 2 && num_of_wires < 7) {
+            remove_simple_wire_results();
             simple_wire_results();
             clear_simple_wires_array();
             reset_all_num_wires();
@@ -148,7 +151,6 @@ function check_simple_wires_button(e) {
     if(e.target.value === "undo") {
         undo_simple_wires_array();
         undo_simple_wires_chosen();
-        num_of_wires--;
     }
 }
 
