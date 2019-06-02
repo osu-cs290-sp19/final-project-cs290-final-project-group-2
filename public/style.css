@@ -404,10 +404,28 @@ a:focus {
     display: grid;
 }
 
+.button-color label {
+    padding-bottom: 32px;
+}
+
 .button-text label{
     display: grid;
     margin-left: 25px;
+    margin-bottom: 20px;
     padding: 0px 30px;
+}
+
+.the-button-result {
+    display: grid;
+}
+
+.the-button-result .simple-wires-result {
+    margin: 0px;
+}
+
+.color-strip-img {
+    margin-left: 43px;
+    height: 55px;
 }
 
 input[type=text] {

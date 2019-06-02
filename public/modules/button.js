@@ -12,7 +12,7 @@ var color = "color";
 var word = "word";
 
 function check_color_strip() {
-    var modalBody = document.getElementsByClassName("simple-modal-body")[1];
+    var modalBody = document.getElementsByClassName("the-button-result")[0];
 
     var simpleWiresResults = document.createElement("p");
     simpleWiresResults.classList.add("simple-wires-result");
@@ -26,19 +26,20 @@ function check_color_strip() {
     modalBody.appendChild(buttonImg);
 }
 
+
 function the_button_results() {
     if(color === "blue" && word === "abort") {
         check_color_strip();
     } else if(get_batteries() > 1 && word === "detonate") {
-        show_the_button_results("press and immediately release the button");
+        show_the_button_results("Press and immediately release the button");
     } else if(color === "white" && get_car()) {
         check_color_strip();
     } else if(get_batteries() > 2 && get_frk()) {
-        show_the_button_results("press and immediately release the button");
+        show_the_button_results("Press and immediately release the button");
     } else if(color === "yellow") {
         check_color_strip();
     } else if(color === "red" && word === "hold") {
-        show_the_button_results("press and immediately release the button");
+        show_the_button_results("Press and immediately release the button");
     } else {
         check_color_strip();
     }
@@ -82,7 +83,7 @@ function check_the_button(e) {
 //showing results to the screen
 
 function show_the_button_results(string) {
-    var modalBody = document.getElementsByClassName("simple-modal-body")[1];
+    var modalBody = document.getElementsByClassName("the-button-result")[0];
 
     var simpleWiresResults = document.createElement("p");
     simpleWiresResults.classList.add("simple-wires-result");
@@ -94,5 +95,8 @@ function show_the_button_results(string) {
 function remove_the_button_results() {
     if(document.getElementsByClassName("simple-wires-result")[0]) {
         document.getElementsByClassName("simple-wires-result")[0].remove();
+    }
+    if (document.getElementsByClassName("color-strip-img")[0]) {
+        document.getElementsByClassName("color-strip-img")[0].remove();
     }
 }
