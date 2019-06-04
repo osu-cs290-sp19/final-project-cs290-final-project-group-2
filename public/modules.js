@@ -22,6 +22,12 @@ window.onload = function() {
     /*document.getElementById('morse-code').addEventListener("click", display_morse_code_module);
     document.getElementById('morse-code-modal').addEventListener("click", check_morse_code); */
 
+    //Solved button
+    document.getElementById("solved").addEventListener("click", bomb_complete);
+
+    //focuses serial input
+    document.getElementById("serial").focus();
+
 }
 
 function display_bomb_info_module() {
@@ -82,4 +88,26 @@ function autotab(current,to) {
     if (current.getAttribute && current.value.length==current.getAttribute("maxlength")) {
         to.focus();
     }
+}
+
+
+//Solved button
+function bomb_complete() {
+    //this will do something at somepoint test
+
+    // var message = 1;
+    var data = {name: "Legned27", bombsSolved: 1, solved: sessionStorage.getItem("bombId")};
+    var request = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+    fetch('/stats/update', request);
+
+    // fetch('/stats/update').then(response => {
+    //     console.log(response);
+    // })
+    // window.location.href = 'index.html'; //this should be the last line
 }
