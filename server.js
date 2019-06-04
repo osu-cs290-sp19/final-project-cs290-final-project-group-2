@@ -10,7 +10,7 @@ app.use(express.static('public'));
 //   res.status(404).send("Sorry, that page does not exist");
 // });
 app.post('/stats/update', function (req, res)){
-  console.log('req: '', req);
+  console.log('req: ', req);
   res.status(200).send('Request received.');
 });
 app.get('*', function (req, res) {
