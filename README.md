@@ -1,3 +1,5 @@
 # CS 290 Final Project - Group 2
 
-Keep Talking and Nobody Explodes helper website. 
+Jospeh Andrews and GAndrews98 are the same person  
+Ryan Russell and russelry are the same person  
+Alexander Rash and AERash are the same person  
