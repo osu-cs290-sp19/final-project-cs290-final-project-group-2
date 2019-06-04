@@ -94,5 +94,20 @@ function autotab(current,to) {
 //Solved button
 function bomb_complete() {
     //this will do something at somepoint test
-    window.location.href = 'index.html'; //this should be the last line
+
+    // var message = 1;
+    var data = {name: "Legned27", bombsSolved: 1, solved: sessionStorage.getItem("bombId")};
+    var request = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    };
+    fetch('/stats/update', request);
+
+    // fetch('/stats/update').then(response => {
+    //     console.log(response);
+    // })
+    // window.location.href = 'index.html'; //this should be the last line
 }
