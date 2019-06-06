@@ -17,6 +17,7 @@ window.onload = function() {
     //Passwords
     document.getElementById('passwords').addEventListener("click", display_passwords_module);
     document.getElementById('passwords-modal').addEventListener("click", check_passwords);
+    // document.getElementsByClassName('passwords-input')[0].addEventListener("keyup", live_search);
 
     //Morse Code
     /*document.getElementById('morse-code').addEventListener("click", display_morse_code_module);
@@ -96,7 +97,13 @@ function bomb_complete() {
     //this will do something at somepoint test
 
     // var message = 1;
-    var data = {name: "Legned27", bombsSolved: 1, solved: sessionStorage.getItem("bombId")};
+    var data = {
+      name: sessionStorage.getItem("username"),
+      stats: {
+        bombsSolved: 1,
+        levelSolved: [sessionStorage.getItem("bombId")]
+      }
+    };
     var request = {
         method: 'POST',
         headers: {
