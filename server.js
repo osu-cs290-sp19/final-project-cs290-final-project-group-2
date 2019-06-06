@@ -30,9 +30,6 @@ function add_user(request) {
 //   res.status(404).send("Sorry, that page does not exist");
 // });
 app.post('/stats/update', function (req, res){
-  // console.log('req: ', req.body);
-  // console.log("Sending post response");
-  // res.status(200).send('Request received.');
   users.findOne({name: req.body.name}, (err, data) =>{
     if(!data) {
       add_user(req.body);
@@ -47,11 +44,12 @@ app.post('/stats/update', function (req, res){
       console.log(data.name, "has solved:", (data.stats.bombsSolved + 1), "bombs");
     }
   });
+  res.status(200).send('Request received.');
 });
 
 app.get('*', function (req, res) {
     console.log("Sending 404");
-  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 MongoClient.connect(mongoUrl, {useNewUrlParser: true}, function (err,client){

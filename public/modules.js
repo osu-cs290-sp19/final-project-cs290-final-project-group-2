@@ -97,7 +97,13 @@ function bomb_complete() {
     //this will do something at somepoint test
 
     // var message = 1;
-    var data = {name: "Legned27", bombsSolved: 1, solved: sessionStorage.getItem("bombId")};
+    var data = {
+      name: sessionStorage.getItem("username"),
+      stats: {
+        bombsSolved: 1,
+        levelSolved: [sessionStorage.getItem("bombId")]
+      }
+    };
     var request = {
         method: 'POST',
         headers: {
