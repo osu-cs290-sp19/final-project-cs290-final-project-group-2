@@ -84,7 +84,7 @@ a:focus {
 #navbar-user-input:focus {
     outline: none;
     background-color: #fff;
-    color: black;    
+    color: black;
 }
 
 #navbar-user-button {
@@ -186,7 +186,7 @@ a:focus {
     flex-wrap: wrap;
     justify-content: center;
     padding: 5%;
-    padding-top: 50px;
+    padding-top: 10px;
 }
 
 .module-button {
@@ -202,9 +202,22 @@ a:focus {
     cursor: pointer;
 }
 
+.special-button-container {
+    justify-content: center;
+    display: flex;
+}
+
+.module-button.special {
+    height: 100px;
+}
+
 .module-img {
     border-radius: 15px;
     width: 100%;
+}
+
+.module-img.special {
+    height: 100px;
 }
 
 .shade {
@@ -234,6 +247,10 @@ a:focus {
     border-radius: 15px;
     padding: 2px;
     pointer-events: none;
+}
+
+.module-text.special {
+    background: none;
 }
 
 /* ----- module modals ----- */
