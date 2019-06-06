@@ -258,6 +258,30 @@ a:focus {
     background: none;
 }
 
+/*----- stats page -----*/
+.stats-container {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 25px;
+}
+
+.user-stats {
+    display: flex;
+    background: rgb(111, 111, 115);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.user-stats h2 {
+    padding-left: 10px;
+}
+
+.user-stats p {
+    display: block;
+    float: right;
+    margin-left: 25%;
+}
+
 /* ----- module modals ----- */
 #modal-backdrop {
     position: fixed;
