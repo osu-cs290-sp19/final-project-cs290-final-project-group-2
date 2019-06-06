@@ -120,11 +120,16 @@ a:focus {
         display: block;
         background-color: rgb(111, 111, 115);
         border-radius: 10px;
+        /*border: solid 2px #ba4423;*/
+        box-shadow: 10px 10px 20px #ba4423;
     }
     .section {
         color: white;
-        margin: 10px;
-        margin-left: 15px;
+        /*margin: 10px;*/
+        padding: 10px;
+        margin: 0;
+        background-color: #ba4423;
+        border-radius: 10px 10px 0px 0px;
         /*padding-right: 50px;*/
     }
     .level-menu {
