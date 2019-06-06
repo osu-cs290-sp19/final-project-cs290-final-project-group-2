@@ -17,6 +17,7 @@ window.onload = function() {
     //Passwords
     document.getElementById('passwords').addEventListener("click", display_passwords_module);
     document.getElementById('passwords-modal').addEventListener("click", check_passwords);
+    // document.getElementsByClassName('passwords-input')[0].addEventListener("keyup", live_search);
 
     //Morse Code
     /*document.getElementById('morse-code').addEventListener("click", display_morse_code_module);

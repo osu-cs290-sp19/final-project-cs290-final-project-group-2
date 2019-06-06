@@ -17,6 +17,32 @@ var p1 = [];
 var p2 = [];
 var p3 = [];
 
+/*
+function live_search() {
+    string1 = document.getElementById('column1').value;
+    string2 = document.getElementById('column2').value;
+    string3 = document.getElementById('column3').value;
+    remove_password_results();
+    test(string1, 0, passwords, p1);
+    test(string2, 1, p1, p2);
+    print_the_password(p1);
+}
+
+function test(string, index, check, add_array) {
+    if(string.length === 6) {
+        for(var i = 0; i < string.length; i++) {
+            for(var j = 0; j < check.length; j++) {
+                if(string[i] === check[j][index]) {
+                    add_array.push(check[j]);
+                }
+            }
+        }
+        for(var i = 0; i < add_array.length; i++) {
+            console.log(add_array[i]);
+        }
+    }
+} */
+
 function clear_all_password_arrays() {
     p1 = [];
     p2 = [];
@@ -51,10 +77,10 @@ function show_password(pw) {
     passwordsBody.appendChild(passwordsResult);
 }
 
-function print_the_password() {
-    for(var i = 0; i < p3.length; i++) {
-        console.log(p3[i]);
-        show_password(p3[i]);
+function print_the_password(array) {
+    for(var i = 0; i < array.length; i++) {
+        // console.log(p3[i]);
+        show_password(array[i]);
     }
 }
 
@@ -80,7 +106,7 @@ function find_password() {
             }
         }
     }
-    print_the_password();
+    print_the_password(p3);
 }
 
 function check_passwords(e) {
