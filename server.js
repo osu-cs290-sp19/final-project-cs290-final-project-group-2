@@ -20,6 +20,9 @@ app.use(express.static('public'));
 // app.use(bodyParser.json());
 app.use(express.json({limit: '1mb'}));
 
+app.engine("handlebars", exphbs());
+app.set("view engine","handlebars");
+
 function add_user(request) {
   console.log("New user added. Name:", request.name);
   console.log(request.name, "has solved: 1 bomb");
@@ -29,6 +32,13 @@ function add_user(request) {
 // app.use(function(req,res,next){
 //   res.status(404).send("Sorry, that page does not exist");
 // });
+app.get('/stats', function (req, res){
+  users.find({}, (err, data) =>{
+    data.toArray((err, docs)=>{
+      res.status(200).render('stats', {users: docs});
+    });
+  });
+});
 app.post('/stats/update', function (req, res){
   users.findOne({name: req.body.name}, (err, data) =>{
     if(!data) {
