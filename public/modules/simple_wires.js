@@ -33,6 +33,7 @@ function undo_simple_wires_array() {
 function add_to_simple_wires_array(value) {
     simpleWiresArray.push(value);
     num_of_wires++;
+    totalWiresCut++;
 }
 
 function print_array() {

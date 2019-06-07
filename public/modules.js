@@ -1,5 +1,6 @@
 console.log("Value retrieved:", sessionStorage.getItem("bombId"));
 var modulesSolved = 0;
+var totalWiresCut = 0;
 
 
 window.onload = function() {
@@ -103,7 +104,8 @@ function bomb_complete() {
       stats: {
         bombsSolved: 1,
         levelSolved: [sessionStorage.getItem("bombId")],
-        modulesSolved: modulesSolved
+        modulesSolved: modulesSolved,
+        totalWiresCut: totalWiresCut
       }
     };
     console.log("modules", modulesSolved);
@@ -115,7 +117,7 @@ function bomb_complete() {
         body: JSON.stringify(data)
     };
     fetch('/stats/update', request);
-    modulesSolved = 0;
+    modulesSolved = totalWiresCut = 0;
 
     // fetch('/stats/update').then(response => {
     //     console.log(response);
