@@ -1,4 +1,5 @@
 console.log("Value retrieved:", sessionStorage.getItem("bombId"));
+var modulesSolved = 0;
 
 
 window.onload = function() {
@@ -101,7 +102,8 @@ function bomb_complete() {
       name: sessionStorage.getItem("username"),
       stats: {
         bombsSolved: 1,
-        levelSolved: [sessionStorage.getItem("bombId")]
+        levelSolved: [sessionStorage.getItem("bombId")],
+        modulesSolved: modulesSolved
       }
     };
     var request = {
@@ -112,6 +114,7 @@ function bomb_complete() {
         body: JSON.stringify(data)
     };
     fetch('/stats/update', request);
+    modulesSolved = 0;
 
     // fetch('/stats/update').then(response => {
     //     console.log(response);

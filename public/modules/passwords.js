@@ -127,6 +127,7 @@ function check_passwords(e) {
             remove_password_results();
             find_password();
             clear_all_password_arrays();
+            modulesSolved++;
         } else {
             alert("You may have not entered enough letters per input box, there must be 6 per box");
         }

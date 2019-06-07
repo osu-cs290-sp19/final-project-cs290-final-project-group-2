@@ -133,6 +133,7 @@ function check_simple_wires_button(e) {
             clear_simple_wires_array();
             reset_all_num_wires();
             remove_simple_wires_chosen();
+            modulesSolved++;
         } else {
             alert("Either not enough wires selected or too many selected");
         }

@@ -60,6 +60,7 @@ function check_the_button(e) {
         remove_the_button_results()
         if(color !== "color" && word !== "word") {
             the_button_results()
+            modulesSolved++;
         } else {
             alert("You must choose a color and word");
         }
