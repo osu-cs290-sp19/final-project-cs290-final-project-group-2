@@ -9,7 +9,11 @@ const mongoUser = process.env.MONGO_USER;
 const mongoPass = process.env.MONGO_PASS;
 const mongoName = process.env.MONGO_NAME;
 
-var mongoUrl = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:${mongoPort}/${mongoName}`;
+// var mongoUrl = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:${mongoPort}/${mongoName}`;
+var mongoUrl = `mongodb+srv://${mongoUser}:${mongoPass}@cluster0-ne0jv.mongodb.net/${mongoName}?retryWrites=true&w=majority`;
+
+// var mongoUrl = 'mongodb+srv://${mongoUser}:${mongoPass}@cluster0-ne0jv.mongodb.net/${mongoName}?retryWrites=true&w=majority';
+// var mongoUrl = 'mongodb+srv://gandrews98:niltagMongoDB@cluster0-ne0jv.mongodb.net/cs290_andrjose?retryWrites=true&w=majority';
 
 var database = null;
 var users = null;
@@ -32,6 +36,13 @@ function add_user(request) {
 // app.use(function(req,res,next){
 //   res.status(404).send("Sorry, that page does not exist");
 // });
+app.get('/stats/:user', function (req, res) {
+    var username = req.params.user;
+    users.findOne({name: username}, (err, data) =>{
+        res.status(200).render('individualStats', data);
+    });
+});
+
 app.get('/stats', function (req, res){
   users.find({}, (err, data) =>{
     data.toArray((err, docs)=>{
@@ -39,6 +50,7 @@ app.get('/stats', function (req, res){
     });
   });
 });
+
 app.post('/stats/update', function (req, res){
   users.findOne({name: req.body.name}, (err, data) =>{
     if(!data) {

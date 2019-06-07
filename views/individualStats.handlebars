@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Statistics</title>
-        <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
-        <link rel="stylesheet" href="style.css" media="screen">
+        <title>{{name}}</title>
+        <link rel="shortcut icon" type="image/png" href="/assets/favicon.png"/>
+        <link rel="stylesheet" href="/style.css" media="screen">
         <script src="index.js" charset="utf-8" defer></script>
     </head>
 
@@ -13,13 +13,13 @@
             <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
             <div class="header">
                 <a href="/index.html">
-                <img src="assets/header-photo.png" alt="KTANE" class="header-img">
+                <img src="/assets/header-photo.png" alt="KTANE" class="header-img">
                 </a>
             </div>
 
             <nav class="navbar">
                 <ul class="navlist">
-                    <li class="navitem navlink"><a href="index.html">Home</a></li>
+                    <li class="navitem navlink"><a href="/index.html">Home</a></li>
                     <li class="navitem navlink active"><a href="/stats">Stats</a></li>
                     <li class="navitem navlink"><a href="http://www.bombmanual.com/manual/1/html/index.html">Manual</a></li>
                     <li class="navitem navbar-user">
@@ -30,15 +30,13 @@
             </nav>
         </header>
 
+        <h1 class="stats-name">{{name}}</h1>
         <main>
-            <div class="stats-container">
-                {{#each users}}
-                <a href="/stats/{{this.name}}">
-                    <div class="user-stats">
-                        {{> userStats}}
-                    </div>
-                </a>
-                {{/each}}
+            <div class="general-stats">
+                {{stats.bombsSolved}}
+            </div>
+            <div class="level-stats">
+
             </div>
         </main>
 
