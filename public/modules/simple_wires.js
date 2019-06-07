@@ -134,6 +134,7 @@ function check_simple_wires_button(e) {
             reset_all_num_wires();
             remove_simple_wires_chosen();
             modulesSolved++;
+            console.log("simple:", modulesSolved);
         } else {
             alert("Either not enough wires selected or too many selected");
         }

@@ -60,7 +60,9 @@ function check_the_button(e) {
         remove_the_button_results()
         if(color !== "color" && word !== "word") {
             the_button_results()
+            clear_radios();
             modulesSolved++;
+            console.log(modulesSolved);
         } else {
             alert("You must choose a color and word");
         }
@@ -69,18 +71,21 @@ function check_the_button(e) {
     //Check if the cancel button or the X was pressed
     if (temp === "cancel") {
         hide_button_module();
-        if(document.querySelector('input[name="color"]:checked')) {
-            document.querySelector('input[name="color"]:checked').checked = false;
-        }
-        if(document.querySelector('input[name="text"]:checked')) {
-            document.querySelector('input[name="text"]:checked').checked = false;
-        }
-        color = "color";
-        word = "word";
+        clear_radios();
         remove_the_button_results();
     }
 }
 
+function clear_radios() {
+    if(document.querySelector('input[name="color"]:checked')) {
+        document.querySelector('input[name="color"]:checked').checked = false;
+    }
+    if(document.querySelector('input[name="text"]:checked')) {
+        document.querySelector('input[name="text"]:checked').checked = false;
+    }
+    color = "color";
+    word = "word";
+}
 //showing results to the screen
 
 function show_the_button_results(string) {

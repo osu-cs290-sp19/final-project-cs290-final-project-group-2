@@ -57,11 +57,17 @@ app.post('/stats/update', function (req, res){
       add_user(req.body);
     } else {
       //console.log(data.stats.bombsSolved);
-
+      var inc = data.stats.modulesSolved + req.body.stats.modulesSolved;
       if(!(data.stats.levelSolved.includes(req.body.stats.levelSolved[0]))) {
-        users.updateOne(data, {$push: {"stats.levelSolved": req.body.stats.levelSolved[0]}, $inc: {"stats.bombsSolved": 1}});
+        users.updateOne(data, {
+            $push: {"stats.levelSolved": req.body.stats.levelSolved[0]},
+            $inc: {"stats.bombsSolved": 1},
+            $set: {"stats.modulesSolved": inc}
+        });
       } else {
-        users.updateOne(data, {$inc: {"stats.bombsSolved": 1}});
+        users.updateOne(data, {
+            $inc: {"stats.bombsSolved": 1},
+            $set: {"stats.modulesSolved": inc}});
       }
       console.log(data.name, "has solved:", (data.stats.bombsSolved + 1), "bombs");
     }

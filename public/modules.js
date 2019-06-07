@@ -106,6 +106,7 @@ function bomb_complete() {
         modulesSolved: modulesSolved
       }
     };
+    console.log("modules", modulesSolved);
     var request = {
         method: 'POST',
         headers: {
