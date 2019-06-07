@@ -1,4 +1,6 @@
 console.log("Value retrieved:", sessionStorage.getItem("bombId"));
+var modulesSolved = 0;
+var totalWiresCut = 0;
 
 
 window.onload = function() {
@@ -101,9 +103,12 @@ function bomb_complete() {
       name: sessionStorage.getItem("username"),
       stats: {
         bombsSolved: 1,
-        levelSolved: [sessionStorage.getItem("bombId")]
+        levelSolved: [sessionStorage.getItem("bombId")],
+        modulesSolved: modulesSolved,
+        totalWiresCut: totalWiresCut
       }
     };
+    console.log("modules", modulesSolved);
     var request = {
         method: 'POST',
         headers: {
@@ -112,6 +117,7 @@ function bomb_complete() {
         body: JSON.stringify(data)
     };
     fetch('/stats/update', request);
+    modulesSolved = totalWiresCut = 0;
 
     // fetch('/stats/update').then(response => {
     //     console.log(response);

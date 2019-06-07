@@ -118,10 +118,12 @@ a:focus {
 }
     .level {
         display: block;
-        background-color: rgb(111, 111, 115);
+        /*background-color: #0c0c0e;*/
+        background-color: rgb(25, 25, 25);
         border-radius: 10px;
         /*border: solid 2px #ba4423;*/
-        box-shadow: 10px 10px 20px #ba4423;
+        /*box-shadow: 10px 10px 20px #ba4423;*/
+        box-shadow: 10px 10px 20px rgb(111, 111, 115);
     }
     .section {
         color: white;
@@ -165,13 +167,17 @@ a:focus {
             text-align: center;
             font-size: 100px;
             font-weight: bold;
+            color: white;
+            /*transition: 0.2s;*/
         }
         .solve:focus {
             outline: none;
         }
         .solve:hover {
-            background-color: rgb(85, 85, 90);
+            background-color: black;
             cursor: pointer;
+            color: #ba4423;
+            box-shadow: 10px 10px 30px #ba4423;
         }
         .e {
             grid-column: 3;
@@ -256,6 +262,71 @@ a:focus {
 
 .module-text.special {
     background: none;
+}
+
+/*----- stats page -----*/
+.stats-container {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 25px;
+}
+
+.user-stats {
+    display: flex;
+    background: rgb(111, 111, 115);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.user-stats h2 {
+    padding-left: 10px;
+}
+
+.user-stats p {
+    display: block;
+    float: right;
+    margin-left: 25%;
+}
+
+/*----- individual stats -----*/
+.stats-name {
+    /*margin-left: 50%;*/
+    color: white;
+    margin-top: 2s0px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.individual-stats {
+    display: flex;
+    justify-content: center;
+}
+
+.stats-block {
+    /*background: #0c0c0e;*/
+    background: rgb(25, 25, 25);
+    border-radius: 10px;
+    margin: 0px 25px;
+    width: 35%;
+    box-shadow: 10px 10px 20px rgb(111, 111, 115);
+}
+
+.stats-block h2 {
+    color: white;
+    background-color: #ba4423;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+}
+
+.stats-block p {
+    padding: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    color: white;
 }
 
 /* ----- module modals ----- */

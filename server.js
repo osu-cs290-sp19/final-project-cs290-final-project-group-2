@@ -9,7 +9,11 @@ const mongoUser = process.env.MONGO_USER;
 const mongoPass = process.env.MONGO_PASS;
 const mongoName = process.env.MONGO_NAME;
 
-var mongoUrl = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:${mongoPort}/${mongoName}`;
+// var mongoUrl = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:${mongoPort}/${mongoName}`;
+var mongoUrl = `mongodb+srv://${mongoUser}:${mongoPass}@cluster0-ne0jv.mongodb.net/${mongoName}?retryWrites=true&w=majority`;
+
+// var mongoUrl = 'mongodb+srv://${mongoUser}:${mongoPass}@cluster0-ne0jv.mongodb.net/${mongoName}?retryWrites=true&w=majority';
+// var mongoUrl = 'mongodb+srv://gandrews98:niltagMongoDB@cluster0-ne0jv.mongodb.net/cs290_andrjose?retryWrites=true&w=majority';
 
 var database = null;
 var users = null;
@@ -32,6 +36,16 @@ function add_user(request) {
 // app.use(function(req,res,next){
 //   res.status(404).send("Sorry, that page does not exist");
 // });
+app.get('/stats/:user', function (req, res) {
+    var username = req.params.user;
+    users.findOne({name: username}, (err, data) =>{
+        if (data)
+            res.status(200).render('individualStats', data);
+        else
+            res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+    });
+});
+
 app.get('/stats', function (req, res){
   users.find({}, (err, data) =>{
     data.toArray((err, docs)=>{
@@ -39,17 +53,28 @@ app.get('/stats', function (req, res){
     });
   });
 });
+
 app.post('/stats/update', function (req, res){
   users.findOne({name: req.body.name}, (err, data) =>{
     if(!data) {
       add_user(req.body);
     } else {
       //console.log(data.stats.bombsSolved);
-
+      var incModules = data.stats.modulesSolved + req.body.stats.modulesSolved;
+      var incWires = data.stats.totalWiresCut + req.body.stats.totalWiresCut;
       if(!(data.stats.levelSolved.includes(req.body.stats.levelSolved[0]))) {
-        users.updateOne(data, {$push: {"stats.levelSolved": req.body.stats.levelSolved[0]}, $inc: {"stats.bombsSolved": 1}});
+        users.updateOne(data, {
+            $push: {"stats.levelSolved": req.body.stats.levelSolved[0]},
+            $inc: {"stats.bombsSolved": 1},
+            $set: {"stats.modulesSolved": incModules},
+            $set: {"stats.totalWiresCut": incWires}
+        });
       } else {
-        users.updateOne(data, {$inc: {"stats.bombsSolved": 1}});
+        users.updateOne(data, {
+            $inc: {"stats.bombsSolved": 1},
+            $set: {"stats.modulesSolved": incModules},
+            $set: {"stats.totalWiresCut": incWires}
+        });
       }
       console.log(data.name, "has solved:", (data.stats.bombsSolved + 1), "bombs");
     }
