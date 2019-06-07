@@ -33,7 +33,6 @@ function undo_simple_wires_array() {
 function add_to_simple_wires_array(value) {
     simpleWiresArray.push(value);
     num_of_wires++;
-    totalWiresCut++;
 }
 
 function print_array() {
@@ -135,6 +134,7 @@ function check_simple_wires_button(e) {
             reset_all_num_wires();
             remove_simple_wires_chosen();
             modulesSolved++;
+            totalWiresCut++;
             console.log("simple:", modulesSolved);
         } else {
             alert("Either not enough wires selected or too many selected");

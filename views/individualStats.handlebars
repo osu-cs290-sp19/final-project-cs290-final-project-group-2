@@ -32,11 +32,17 @@
 
         <h1 class="stats-name">{{name}}</h1>
         <main class="individual-stats">
-            <div class="general-stats">
-                {{stats.modulesSolved}}
+            <div class="stats-block">
+                <h2>General Stats</h2>
+                <p>Bombs Defused: {{stats.bombsSolved}}</p>
+                <p>Modules Solved: {{stats.modulesSolved}}</p>
+                <p>Wires Cut: {{stats.totalWiresCut}}</p>
             </div>
-            <div class="level-stats">
-
+            <div class="stats-block">
+                <h2>Levels Completed</h2>
+                {{#each stats.levelSolved}}
+                <p>{{this}}</p>
+                {{/each}}
             </div>
         </main>
 

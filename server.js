@@ -39,7 +39,10 @@ function add_user(request) {
 app.get('/stats/:user', function (req, res) {
     var username = req.params.user;
     users.findOne({name: username}, (err, data) =>{
-        res.status(200).render('individualStats', data);
+        if (data)
+            res.status(200).render('individualStats', data);
+        else
+            res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
     });
 });
 
@@ -57,17 +60,21 @@ app.post('/stats/update', function (req, res){
       add_user(req.body);
     } else {
       //console.log(data.stats.bombsSolved);
-      var inc = data.stats.modulesSolved + req.body.stats.modulesSolved;
+      var incModules = data.stats.modulesSolved + req.body.stats.modulesSolved;
+      var incWires = data.stats.totalWiresCut + req.body.stats.totalWiresCut;
       if(!(data.stats.levelSolved.includes(req.body.stats.levelSolved[0]))) {
         users.updateOne(data, {
             $push: {"stats.levelSolved": req.body.stats.levelSolved[0]},
             $inc: {"stats.bombsSolved": 1},
-            $set: {"stats.modulesSolved": inc}
+            $set: {"stats.modulesSolved": incModules},
+            $set: {"stats.totalWiresCut": incWires}
         });
       } else {
         users.updateOne(data, {
             $inc: {"stats.bombsSolved": 1},
-            $set: {"stats.modulesSolved": inc}});
+            $set: {"stats.modulesSolved": incModules},
+            $set: {"stats.totalWiresCut": incWires}
+        });
       }
       console.log(data.name, "has solved:", (data.stats.bombsSolved + 1), "bombs");
     }
