@@ -2,7 +2,7 @@ console.log("Value retrieved:", sessionStorage.getItem("bombId"));
 var modulesSolved = 0;
 var totalWiresCut = 0;
 var num_strikes = 0;
-var totalStrikesReceived
+var totalStrikesReceived = 0;
 
 
 window.onload = function() {
