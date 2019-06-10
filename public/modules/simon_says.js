@@ -21,63 +21,72 @@ function start_simon_says(e) {
 function find_the_flash(e) {
     if(has_vowel() /*&& strikes === 0*/) {
         if(e.target.value === "red") {
-            console.log("blue");
+            show_simon_says_results("blue");
         } else if (e.target.value === "blue") {
-            console.log("red");
+            show_simon_says_results("red");
         } else if (e.target.value === "green") {
-            console.log("yellow");
+            show_simon_says_results("yellow");
         } else if (e.target.value === "yellow") {
-            console.log("green");
+            show_simon_says_results("green");
         }
     } else if (has_vowel() /*&& strikes === 1*/) {
         if (e.target.value === "red") {
-            console.log("yellow");
+            show_simon_says_results("yellow");
         } else if (e.target.value === "blue") {
-            console.log("green");
+            show_simon_says_results("green");
         } else if (e.target.value === "green") {
-            console.log("blue");
+            show_simon_says_results("blue");
         } else if (e.target.value === "yellow") {
-            console.log("red");
+            show_simon_says_results("red");
         }
     } else if (has_vowel() /*&& strikes === 2*/) {
         if (e.target.value === "red") {
-            console.log("green");
+            show_simon_says_results("green");
         } else if (e.target.value === "blue") {
-            console.log("red");
+            show_simon_says_results("red");
         } else if (e.target.value === "green") {
-            console.log("yellow");
+            show_simon_says_results("yellow");
         } else if (e.target.value === "yellow") {
-            console.log("blue");
+            show_simon_says_results("blue");
         }
     } else if (!has_vowel() /*&& strikes === 0*/) {
         if (e.target.value === "red") {
-            console.log("blue");
+            show_simon_says_results("blue");
         } else if (e.target.value === "blue") {
-            console.log("yellow");
+            show_simon_says_results("yellow");
         } else if (e.target.value === "green") {
-            console.log("green");
+            show_simon_says_results("green");
         } else if (e.target.value === "yellow") {
-            console.log("red");
+            show_simon_says_results("red");
         }
     } else if (!has_vowel() /*&& strikes === 1*/) {
         if (e.target.value === "red") {
-            console.log("red");
+            show_simon_says_results("red");
         } else if (e.target.value === "blue") {
-            console.log("blue");
+            show_simon_says_results("blue");
         } else if (e.target.value === "green") {
-            console.log("yellow");
+            show_simon_says_results("yellow");
         } else if (e.target.value === "yellow") {
-            console.log("green");
+            show_simon_says_results("green");
         }
     } else if (!has_vowel() /*&& strikes === 2*/) {
         if (e.target.value === "red") {
-            console.log("yellow");
+            show_simon_says_results("yellow");
         } else if (e.target.value === "blue") {
-            console.log("green");
+            show_simon_says_results("green");
         } else if (e.target.value === "green") {
-            console.log("blue");
+            show_simon_says_results("blue");
         } else if (e.target.value === "yellow") {
-            console.log("red");
+            show_simon_says_results("red");
         }
     }
+}
+
+function show_simon_says_results(string) {
+    var simonSaysBody = document.getElementsByClassName("simon-says-container")[0];
+
+    var simonSayResults = document.createElement("p");
+    simonSayResults.textContent = string;
+    simonSayResults.classList.add("simon-says-result");
+    simonSaysBody.appendChild(simonSayResults);
 }
