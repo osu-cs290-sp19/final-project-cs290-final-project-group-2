@@ -33,6 +33,19 @@ function add_user(request) {
   users.insertOne(request);
 }
 
+function compare(a, b) {
+    if (a.name && b.name) {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        var comparison = 0;
+        if (nameA > nameB) {
+            comparsion = 1;
+        } else if (nameA < nameB) {
+            comparison = -1;
+        }
+    }
+    return comparison;
+}
 // app.use(function(req,res,next){
 //   res.status(404).send("Sorry, that page does not exist");
 // });
@@ -48,6 +61,7 @@ app.get('/stats/:user', function (req, res) {
 
 app.get('/stats', function (req, res){
   users.find({}, (err, data) =>{
+    data.sort({"stats.bombsSolved": -1});
     data.toArray((err, docs)=>{
       res.status(200).render('stats', {users: docs});
     });

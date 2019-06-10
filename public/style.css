@@ -118,11 +118,8 @@ a:focus {
 }
     .level {
         display: block;
-        /*background-color: #0c0c0e;*/
-        background-color: rgb(25, 25, 25);
+        background-color: rgb(25, 25, 26);
         border-radius: 10px;
-        /*border: solid 2px #ba4423;*/
-        /*box-shadow: 10px 10px 20px #ba4423;*/
         box-shadow: 10px 10px 20px rgb(111, 111, 115);
     }
     .section {
@@ -140,9 +137,21 @@ a:focus {
         padding: 10px;
         width: 50%;
         border-radius: 5px;
+        border: solid 2px white;
+        background: rgb(25, 25, 26);
+        color: white;
+        font-size: 16px;
     }
     .level-menu:hover {
-        background-color: white;
+        /* background-color: rgb(38, 38, 40); */
+        border-color: #ba4423;
+    }
+    .level-menu:focus {
+        outline: none;
+        border-color: #ba4423;
+    }
+    .level-menu option {
+        font-size: 16px;
     }
         .a {
             grid-column: 1;
@@ -231,6 +240,33 @@ a:focus {
     height: 100px;
 }
 
+.strike-container {
+    display: flex;
+    height: 75px;
+    margin: 33.5px 15px;
+}
+.strike-container button {
+    border: none;
+    width: 75px;
+    background-color: #ba4423;
+    font-size: 60px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.strike-container button:hover {
+    background-color: #933419;
+}
+.strike-container button:focus {
+    outline: none;
+}
+.strike-container h3 {
+    margin: 5px 15px;
+    font-family: monospace;
+    font-size: 50px;
+    color: white;
+}
+
 .shade {
     width: 100%;
     height: 100%;
@@ -266,33 +302,50 @@ a:focus {
 
 /*----- stats page -----*/
 .stats-container {
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 25px;
+    margin-left: 27%;
+    margin-right: 27%;
+    margin-top: 0px;
 }
 
 .user-stats {
     display: flex;
-    background: rgb(111, 111, 115);
-    margin: 10px;
+    /* float: right; */
+    background: rgb(25, 25, 26);
+    margin: 13px;
     border-radius: 10px;
+    border: solid white 1px;
+    justify-content: space-between;
+}
+
+.user-stats:hover {
+    border-color: #ba4423;
+    background-color: black;
 }
 
 .user-stats h2 {
-    padding-left: 10px;
+    padding-left: 30px;
 }
 
 .user-stats p {
-    display: block;
-    float: right;
-    margin-left: 25%;
+    padding-right: 30px;
+    padding-top: 10px;
 }
 
 /*----- individual stats -----*/
 .stats-name {
     /*margin-left: 50%;*/
     color: white;
-    margin-top: 2s0px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    font-size: 50px;
+    text-align: center;
+}
+
+h1 {
+    padding: 5px 0px;
+    color: white;
+    margin-top: 2px;
+    margin-bottom: -10px;
     font-size: 50px;
     text-align: center;
 }
@@ -304,7 +357,7 @@ a:focus {
 
 .stats-block {
     /*background: #0c0c0e;*/
-    background: rgb(25, 25, 25);
+    background: rgb(25, 25, 26);
     border-radius: 10px;
     margin: 0px 25px;
     width: 35%;
@@ -323,7 +376,7 @@ a:focus {
 .stats-block p {
     padding: 5px;
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 15px;
     padding-bottom: 10px;
     margin: 0;
     color: white;
@@ -358,7 +411,7 @@ a:focus {
     margin: 200px auto;
     border: solid 2px #ba4423;
     border-radius: 18px;
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(25, 25, 26);
 }
 
 .modal-header {
@@ -464,32 +517,76 @@ a:focus {
 .simple-button:hover {
     box-shadow: 0 0 0 2pt #ba4423;
 }
-
 .simple-button:focus {
     outline: none;
+}
+
+.simon-buttons {
+    margin-left: 30px;
+    margin-top: 30px;
+    display: grid;
+    transform: rotate(-45deg);
+}
+.simon-buttons button {
+    margin: 5px 2px;
+    height: 75px;
+    width: 75px;
+}
+.simon-says-container {
+    margin-left: 0;
+    display: flex;
+}
+.simon-says-container p {
+    padding: 4px;
 }
 
 .red {
     background-color: #FE0E0A;
     color: white;
 }
-
 .white {
     background-color: #FFFAE9;
 }
-
 .blue {
     background-color: #3044B1;
     color: white;
 }
-
 .yellow {
     background-color: #FFFF21;
 }
-
 .black {
     background-color: #020202;
     color: white;
+}
+
+.simon-red {
+    background-color: #6A050C;
+    color: white;
+}
+.simon-green {
+    background-color: #196402;
+    color: white;
+}
+.simon-blue {
+    background-color: #040a82;
+    color: white;
+}
+.simon-yellow {
+    background-color: #897300;
+    color: white;
+}
+
+.yellow-font {
+    color: #dbdb1a;
+}
+.blue-font {
+    color: #2139be;
+}
+.red-font {
+    color: #dd0a07;
+}
+.green-font {
+    color: #248c04;
 }
 
 .simple-wires-result {

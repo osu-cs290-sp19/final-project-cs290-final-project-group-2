@@ -31,6 +31,10 @@ window.onload = function() {
     //focuses serial input
     document.getElementById("serial").focus();
 
+    //Simon Says
+    document.getElementById("simon-says").addEventListener("click", display_simon_says_module);
+    document.getElementById("simon-says-modal").addEventListener("click", start_simon_says);
+
 }
 
 function display_bomb_info_module() {

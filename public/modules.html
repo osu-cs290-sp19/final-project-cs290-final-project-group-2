@@ -41,6 +41,12 @@
             <h1 class="module-text special">Bomb Info</h1>
         </div>
 
+    <div class="strike-container">
+        <button type="button" value="minus">−</button>
+        <h3 id="strikes">0</h3>
+        <button type="button" value="add">+</button>
+    </div>
+
         <div class="module-button special" id="solved">
             <img src="http://www.leefilters.com/images/07-bw-standard-23a.jpg" alt="Solved" class="module-img special">
             <div class="shade"></div>
@@ -270,6 +276,34 @@
             <div class="modal-footer">
                 <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
                 <button type="button" value="result" class="modal-accept-button">Result</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="simon-says-modal" class="module-modal hidden">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Simon Says</h3>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
+            </div>
+            <div class="simple-modal-body">
+                <div class="simon-buttons">
+                    <div class="">
+                        <button type="button" value="red" class="simple-button simon-red"></button>
+                        <button type="button" value="blue" class="simple-button simon-blue"></button>
+                    </div>
+                    <div class="">
+                        <button type="button" value="green" class="simple-button simon-green"></button>
+                        <button type="button" value="yellow" class="simple-button simon-yellow"></button>
+                    </div>
+                </div>
+                <div class="simon-says-container">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
+                <button type="button" value="done" class="modal-accept-button">Done</button>
             </div>
         </div>
     </div>
