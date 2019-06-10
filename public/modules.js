@@ -1,6 +1,7 @@
 console.log("Value retrieved:", sessionStorage.getItem("bombId"));
 var modulesSolved = 0;
 var totalWiresCut = 0;
+var num_strikes = 0;
 
 
 window.onload = function() {
@@ -27,6 +28,9 @@ window.onload = function() {
 
     //Solved button
     document.getElementById("solved").addEventListener("click", bomb_complete);
+
+    //Strike buttons
+    document.getElementById("strike-id").addEventListener("click", strike_counter);
 
     //focuses serial input
     document.getElementById("serial").focus();
@@ -127,4 +131,13 @@ function bomb_complete() {
     //     console.log(response);
     // })
     // window.location.href = 'index.html'; //this should be the last line
+}
+
+function strike_counter(e) {
+    if(e.target.value === "minus" && num_strikes > 0) {
+        num_strikes--;
+    } else if(e.target.value === "add" && num_strikes < 2 ) { /*later add MAX_STRIKES - 1 in place of 2*/
+        num_strikes++;
+    }
+    document.getElementById("strikes").textContent = num_strikes;
 }

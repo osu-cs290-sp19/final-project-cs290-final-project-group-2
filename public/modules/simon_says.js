@@ -18,7 +18,7 @@ function start_simon_says(e) {
         numSimonResults = 0;
     }
     if(simon_says_value === "red" || simon_says_value === "blue" || simon_says_value === "green" || simon_says_value === "yellow") {
-        find_the_flash(e);
+        find_the_flash(e, num_strikes);
     }
     if (simon_says_value === "done" && numSimonResults > 2) {
         hide_simon_says_module();
@@ -28,8 +28,8 @@ function start_simon_says(e) {
     }
 }
 
-function find_the_flash(e) {
-    if(has_vowel() /*&& strikes === 0*/) {
+function find_the_flash(e, strikes) {
+    if(has_vowel() && strikes === 0) {
         if(e.target.value === "red") {
             show_simon_says_results("Blue");
         } else if (e.target.value === "blue") {
@@ -39,7 +39,7 @@ function find_the_flash(e) {
         } else if (e.target.value === "yellow") {
             show_simon_says_results("Green");
         }
-    } else if (has_vowel() /*&& strikes === 1*/) {
+    } else if (has_vowel() && strikes === 1) {
         if (e.target.value === "red") {
             show_simon_says_results("Yellow");
         } else if (e.target.value === "blue") {
@@ -49,7 +49,7 @@ function find_the_flash(e) {
         } else if (e.target.value === "yellow") {
             show_simon_says_results("Red");
         }
-    } else if (has_vowel() /*&& strikes === 2*/) {
+    } else if (has_vowel() && strikes === 2) {
         if (e.target.value === "red") {
             show_simon_says_results("Green");
         } else if (e.target.value === "blue") {
@@ -59,7 +59,7 @@ function find_the_flash(e) {
         } else if (e.target.value === "yellow") {
             show_simon_says_results("Blue");
         }
-    } else if (!has_vowel() /*&& strikes === 0*/) {
+    } else if (!has_vowel() && strikes === 0) {
         if (e.target.value === "red") {
             show_simon_says_results("Blue");
         } else if (e.target.value === "blue") {
@@ -69,7 +69,7 @@ function find_the_flash(e) {
         } else if (e.target.value === "yellow") {
             show_simon_says_results("Red");
         }
-    } else if (!has_vowel() /*&& strikes === 1*/) {
+    } else if (!has_vowel() && strikes === 1) {
         if (e.target.value === "red") {
             show_simon_says_results("Red");
         } else if (e.target.value === "blue") {
@@ -79,7 +79,7 @@ function find_the_flash(e) {
         } else if (e.target.value === "yellow") {
             show_simon_says_results("Green");
         }
-    } else if (!has_vowel() /*&& strikes === 2*/) {
+    } else if (!has_vowel() && strikes === 2) {
         if (e.target.value === "red") {
             show_simon_says_results("Yellow");
         } else if (e.target.value === "blue") {
@@ -89,6 +89,8 @@ function find_the_flash(e) {
         } else if (e.target.value === "yellow") {
             show_simon_says_results("Red");
         }
+    } else {
+        alert("Make sure your strike counter is up to date with the bomb in game!");
     }
 }
 
