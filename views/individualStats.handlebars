@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>{{name}}</title>
-        <link rel="shortcut icon" type="image/png" href="/assets/favicon.png"/>
-        <link rel="stylesheet" href="/style.css" media="screen">
-        <script src="index.js" charset="utf-8" defer></script>
-    </head>
 
-    <body>
-        <header>
-            <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
-            <div class="header">
-                <a href="/index.html">
+<head>
+    <meta charset="utf-8">
+    <title>{{name}}</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="/style.css" media="screen">
+    <script src="index.js" charset="utf-8" defer></script>
+</head>
+
+<body>
+    <header>
+        <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
+        <div class="header">
+            <a href="/index.html">
                 <img src="/assets/header-photo.png" alt="KTANE" class="header-img">
-                </a>
-            </div>
+            </a>
+        </div>
 
-            <nav class="navbar">
-                <ul class="navlist">
-                    <li class="navitem navlink"><a href="/index.html">Home</a></li>
-                    <li class="navitem navlink active"><a href="/stats">Stats</a></li>
-                    <li class="navitem navlink"><a href="http://www.bombmanual.com/manual/1/html/index.html">Manual</a></li>
-                    <li class="navitem navbar-user">
-                        <input type="text" id="navbar-user-input" placeholder="Select User...">
-                        <button type="button" id="navbar-user-button"><i class="fas fa-sign-in-alt"></i></button>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="navitem navlink"><a href="/index.html">Home</a></li>
+                <li class="navitem navlink active"><a href="/stats">Stats</a></li>
+                <li class="navitem navlink"><a href="http://www.bombmanual.com/manual/1/html/index.html">Manual</a></li>
+                <li class="navitem navbar-user">
+                    <input type="text" id="navbar-user-input" placeholder="Select User...">
+                    <button type="button" id="navbar-user-button"><i class="fas fa-sign-in-alt"></i></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-        <h1 class="stats-name">{{name}}</h1>
-        <main class="individual-stats">
-            <div class="stats-block">
-                <h2>General Stats</h2>
-                <p>Bombs Defused: {{stats.bombsSolved}}</p>
-                <p>Modules Solved: {{stats.modulesSolved}}</p>
-                <p>Total Strikes: {{stats.totalStrikesReceived}}</p>
-                <p>Wires Cut: {{stats.totalWiresCut}}</p>
-            </div>
-            <div class="stats-block">
-                <h2>Levels Completed</h2>
-                {{#each stats.levelSolved}}
+    <h1 class="stats-name">{{name}}</h1>
+    <main class="individual-stats">
+        <div class="stats-block">
+            <h2>General Stats</h2>
+            <p>Bombs Defused: {{stats.bombsSolved}}</p>
+            <p>Modules Solved: {{stats.modulesSolved}}</p>
+            <p>Total Strikes: {{stats.totalStrikesReceived}}</p>
+            <p>Wires Cut: {{stats.totalWiresCut}}</p>
+        </div>
+        <div class="stats-block">
+            <h2>Levels Completed</h2>
+            {{#each stats.levelSolved}}
                 <p>{{this}}</p>
-                {{/each}}
-            </div>
-        </main>
+            {{/each}}
+        </div>
+    </main>
 
-    </body>
+</body>
+
 </html>

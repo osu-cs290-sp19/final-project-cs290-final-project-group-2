@@ -9,5 +9,5 @@ function hide_morse_code_module() {
 }
 
 function check_morse_code() {
-    
+    //TODO
 }

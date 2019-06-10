@@ -59,7 +59,7 @@ function clear_password_input() {
 }
 
 function remove_password_results() {
-    if(document.getElementsByClassName("passwords-result")) {
+    if (document.getElementsByClassName("passwords-result")) {
         var passwordsBody = document.getElementsByClassName("passwords-result");
         for (var i = 0; i < passwordsBody.length; i++) {
             passwordsBody[i].remove();
@@ -78,30 +78,30 @@ function show_password(pw) {
 }
 
 function print_the_password(array) {
-    for(var i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
         // console.log(p3[i]);
         show_password(array[i]);
     }
 }
 
 function find_password() {
-    for(var i = 0; i < string1.length; i++) {
-        for(var j = 0; j < passwords.length; j++) {
-            if(string1[i] === passwords[j][0]) {
+    for (var i = 0; i < string1.length; i++) {
+        for (var j = 0; j < passwords.length; j++) {
+            if (string1[i] === passwords[j][0]) {
                 p1.push(passwords[j]);
             }
         }
     }
-    for(var i = 0; i < string2.length; i++) {
-        for(var j = 0; j < p1.length; j++) {
-            if(string2[i] === p1[j][1]) {
+    for (var i = 0; i < string2.length; i++) {
+        for (var j = 0; j < p1.length; j++) {
+            if (string2[i] === p1[j][1]) {
                 p2.push(p1[j]);
             }
         }
     }
-    for(var i = 0; i < string3.length; i++) {
-        for(var j = 0; j < p2.length; j++) {
-            if(string3[i] === p2[j][2]) {
+    for (var i = 0; i < string3.length; i++) {
+        for (var j = 0; j < p2.length; j++) {
+            if (string3[i] === p2[j][2]) {
                 p3.push(p2[j]);
             }
         }
@@ -111,7 +111,7 @@ function find_password() {
 
 function check_passwords(e) {
     //checks if the user hits cancel
-    if(e.target.value === "cancel") {
+    if (e.target.value === "cancel") {
         hide_passwords_module();
         clear_password_input();
         clear_all_password_arrays();
@@ -119,11 +119,11 @@ function check_passwords(e) {
     }
 
     //checks if the user hits result
-    if(e.target.value === "result") {
+    if (e.target.value === "result") {
         string1 = document.getElementById('column1').value;
         string2 = document.getElementById('column2').value;
         string3 = document.getElementById('column3').value;
-        if(string1.length === 6 && string2.length === 6 && string3.length === 6) {
+        if (string1.length === 6 && string2.length === 6 && string3.length === 6) {
             remove_password_results();
             find_password();
             clear_all_password_arrays();

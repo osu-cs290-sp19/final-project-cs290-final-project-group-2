@@ -1,12 +1,19 @@
 var solveButton = document.getElementById("solveButton");
-solveButton.onclick = function() {checkLevels()};
+solveButton.onclick = function() {
+    checkLevels()
+};
 
 var loginButton = document.getElementById("navbar-user-button");
-loginButton.onclick = function() {get_user()};
+loginButton.onclick = function() {
+    get_user()
+};
 
 var loginEnter = document.getElementById("navbar-user-input");
-loginEnter.onkeyup = function() {enter_key();};
+loginEnter.onkeyup = function() {
+    enter_key();
+};
 
+//checks multiple levels selected
 function checkLevels() {
     var selectCount = 0;
     var bombId = "";
@@ -18,7 +25,7 @@ function checkLevels() {
         else
             bombId = option;
     }
-    if(selectCount === 6) {
+    if (selectCount === 6) {
         console.log("BombID: ", bombId);
         sessionStorage.setItem("bombId", bombId);
         window.location.href = 'modules.html';
@@ -32,10 +39,9 @@ function get_user() {
     sessionStorage.setItem("username", username);
     console.log(username);
 }
-//sessionStorage.setItem("storedVal", 69);
 
 function enter_key() {
-    if(event.keyCode === 13) {
+    if (event.keyCode === 13) {
         var username = document.getElementById('navbar-user-input').value;
         alert("Welcome " + username + "! You are now signed in.");
         sessionStorage.setItem("username", username);

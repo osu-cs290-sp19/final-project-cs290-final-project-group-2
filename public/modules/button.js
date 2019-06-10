@@ -28,17 +28,17 @@ function check_color_strip() {
 
 
 function the_button_results() {
-    if(color === "blue" && word === "abort") {
+    if (color === "blue" && word === "abort") {
         check_color_strip();
-    } else if(get_batteries() > 1 && word === "detonate") {
+    } else if (get_batteries() > 1 && word === "detonate") {
         show_the_button_results("Press and immediately release the button");
-    } else if(color === "white" && get_car()) {
+    } else if (color === "white" && get_car()) {
         check_color_strip();
-    } else if(get_batteries() > 2 && get_frk()) {
+    } else if (get_batteries() > 2 && get_frk()) {
         show_the_button_results("Press and immediately release the button");
-    } else if(color === "yellow") {
+    } else if (color === "yellow") {
         check_color_strip();
-    } else if(color === "red" && word === "hold") {
+    } else if (color === "red" && word === "hold") {
         show_the_button_results("Press and immediately release the button");
     } else {
         check_color_strip();
@@ -48,17 +48,17 @@ function the_button_results() {
 function check_the_button(e) {
     //sets color and word variables depending what the user selects
     var temp = e.target.value;
-    if(temp === "red" || temp ==="blue" || temp === "yellow" || temp === "white") {
+    if (temp === "red" || temp === "blue" || temp === "yellow" || temp === "white") {
         color = temp;
     }
-    if(temp === "abort" || temp === "detonate" || temp === "hold" || temp === "press") {
+    if (temp === "abort" || temp === "detonate" || temp === "hold" || temp === "press") {
         word = temp;
     }
 
     //checks if results button what pressed
-    if(temp === "result") {
+    if (temp === "result") {
         remove_the_button_results()
-        if(color !== "color" && word !== "word") {
+        if (color !== "color" && word !== "word") {
             the_button_results()
             clear_radios();
             modulesSolved++;
@@ -77,17 +77,17 @@ function check_the_button(e) {
 }
 
 function clear_radios() {
-    if(document.querySelector('input[name="color"]:checked')) {
+    if (document.querySelector('input[name="color"]:checked')) {
         document.querySelector('input[name="color"]:checked').checked = false;
     }
-    if(document.querySelector('input[name="text"]:checked')) {
+    if (document.querySelector('input[name="text"]:checked')) {
         document.querySelector('input[name="text"]:checked').checked = false;
     }
     color = "color";
     word = "word";
 }
-//showing results to the screen
 
+//showing results to the screen
 function show_the_button_results(string) {
     var modalBody = document.getElementsByClassName("the-button-result")[0];
 
@@ -99,7 +99,7 @@ function show_the_button_results(string) {
 }
 
 function remove_the_button_results() {
-    if(document.getElementsByClassName("simple-wires-result")[0]) {
+    if (document.getElementsByClassName("simple-wires-result")[0]) {
         document.getElementsByClassName("simple-wires-result")[0].remove();
     }
     if (document.getElementsByClassName("color-strip-img")[0]) {
