@@ -545,6 +545,18 @@ h1 {
     padding: 4px;
 }
 
+.display-input {
+    display: grid;
+}
+.display-input p {
+    margin-bottom: 5px;
+    margin-left: 12px;
+}
+.simple-button.ktane-red {
+    margin-top: 8px;
+    margin-left: 45px;
+}
+
 .red {
     background-color: #FE0E0A;
     color: white;
@@ -563,7 +575,10 @@ h1 {
     background-color: #020202;
     color: white;
 }
-
+.ktane-red {
+    background-color: #ba4423;
+    color: white;
+}
 .simon-red {
     background-color: #6A050C;
     color: white;
