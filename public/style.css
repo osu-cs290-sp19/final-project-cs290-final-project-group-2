@@ -245,6 +245,7 @@ a:focus {
     height: 75px;
     margin: 33.5px 15px;
 }
+
 .strike-container button {
     border: none;
     width: 75px;
@@ -254,12 +255,15 @@ a:focus {
     border-radius: 10px;
     cursor: pointer;
 }
+
 .strike-container button:hover {
     background-color: #933419;
 }
+
 .strike-container button:focus {
     outline: none;
 }
+
 .strike-container h3 {
     margin: 5px 15px;
     font-family: monospace;
@@ -276,6 +280,7 @@ a:focus {
     left: 0;
     border-radius: 15px;
 }
+
 .shade:hover {
     background: rgba(0,0,0,0.3);
     color: white;
@@ -838,77 +843,3 @@ input[type=checkbox] {
     font-size: 14px;
     margin-top: 20px;
 }
-
-/* .twit-icon {
-font-size: 24px;
-}
-
-.twit-content {
-flex: 1 1 80%;
-margin-left: 10px;
-}
-
-.twit-content p {
-margin: 0;
-}
-
-.twit-content .twit-author {
-margin-top: 8px;
-text-align: right;
-font-weight: bold;
-}
-
-#create-twit-button {
-position: fixed;
-right: 30px;
-bottom: 30px;
-height: 60px;
-width: 60px;
-border: none;
-border-radius: 30px;
-font-size: 30px;
-background-color: #ff1010;
-color: #fff;
-cursor: pointer;
-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-#create-twit-button:hover,
-#create-twit-button:focus {
-right: 27px;
-bottom: 27px;
-height: 66px;
-width: 66px;
-border-radius: 33px;
-font-size: 36px;
-background-color: #319df6;
-}
-
-#create-twit-button:focus {
-outline: none;
-} */
-
-/* .twit-input-element {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    margin: 10px 0;
-}
-
-.twit-input-element label {
-    font-weight: 600;
-    flex: 1 75px;
-    margin-right: 10px;
-}
-
-.twit-input-element input,
-.twit-input-element textarea {
-    flex: 6 200px;
-    padding: 8px;
-    font-size: 20px;
-    border: 1px solid #aaa;
-}
-
-.twit-input-element textarea {
-    min-height: 64px;
-} */

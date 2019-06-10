@@ -1,8 +1,10 @@
-console.log("Value retrieved:", sessionStorage.getItem("bombId"));
+//global stat variables
 var modulesSolved = 0;
 var totalWiresCut = 0;
+var num_strikes = 0;
+var totalStrikesReceived = 0;
 
-
+//initiallizing event listeners
 window.onload = function() {
     //Simple Wires
     document.getElementById("simple-wires").addEventListener("click", display_simple_wire_module);
@@ -28,6 +30,9 @@ window.onload = function() {
     //Solved button
     document.getElementById("solved").addEventListener("click", bomb_complete);
 
+    //Strike buttons
+    document.getElementById("strike-id").addEventListener("click", strike_counter);
+
     //focuses serial input
     document.getElementById("serial").focus();
 
@@ -49,6 +54,7 @@ function bomb_info_handler(e) {
     }
 }
 
+//bomb info helpers
 function get_batteries() {
     var batteryRadios = document.getElementsByName('batteries');
     for (var i = 0; i < batteryRadios.length; i++) {
@@ -58,8 +64,6 @@ function get_batteries() {
     }
 }
 
-
-//bomb info helpers
 function get_frk() {
     return document.getElementById('frk').checked;
 }
@@ -91,28 +95,26 @@ function has_vowel() {
     return false;
 }
 
-function autotab(current,to) {
-    if (current.getAttribute && current.value.length==current.getAttribute("maxlength")) {
+function autotab(current, to) {
+    if (current.getAttribute && current.value.length == current.getAttribute("maxlength")) {
         to.focus();
     }
 }
 
-
 //Solved button
 function bomb_complete() {
-    //this will do something at somepoint test
-
-    // var message = 1;
+    //data packet to update stats
     var data = {
-      name: sessionStorage.getItem("username"),
-      stats: {
-        bombsSolved: 1,
-        levelSolved: [sessionStorage.getItem("bombId")],
-        modulesSolved: modulesSolved,
-        totalWiresCut: totalWiresCut
-      }
+        name: sessionStorage.getItem("username"),
+        stats: {
+            bombsSolved: 1,
+            levelSolved: [sessionStorage.getItem("bombId")],
+            modulesSolved: modulesSolved,
+            totalWiresCut: totalWiresCut,
+            totalStrikesReceived: totalStrikesReceived
+        }
     };
-    console.log("modules", modulesSolved);
+    //post request object
     var request = {
         method: 'POST',
         headers: {
@@ -121,10 +123,19 @@ function bomb_complete() {
         body: JSON.stringify(data)
     };
     fetch('/stats/update', request);
-    modulesSolved = totalWiresCut = 0;
 
-    // fetch('/stats/update').then(response => {
-    //     console.log(response);
-    // })
-    // window.location.href = 'index.html'; //this should be the last line
+    modulesSolved = totalWiresCut = totalStrikesReceived = 0;
+    window.location.href = 'index.html'; //this should be the last line
+}
+
+function strike_counter(e) {
+    if (e.target.value === "minus" && num_strikes > 0) {
+        num_strikes--;
+        totalStrikesReceived--;
+    } else if (e.target.value === "add" && num_strikes < 2) {
+        /*later add MAX_STRIKES - 1 in place of 2*/
+        num_strikes++;
+        totalStrikesReceived++;
+    }
+    document.getElementById("strikes").textContent = num_strikes;
 }

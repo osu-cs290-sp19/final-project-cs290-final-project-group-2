@@ -1,13 +1,14 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
 
     <title>The Modules</title>
     <meta name="description" content="The Modules">
     <meta name="author" content="SitePoint">
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
     <link rel="stylesheet" href="style.css">
     <script src="modules.js"></script>
     <script src="modules/button.js"></script>
@@ -29,11 +30,11 @@
         <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
         <div class="header">
             <a href="index.html">
-            <img src="assets/header-photo.png" alt="KTANE" class="header-img">
+                <img src="assets/header-photo.png" alt="KTANE" class="header-img">
             </a>
         </div>
     </header>
-
+    <!-- special buttons -->
     <div class="special-button-container">
         <div class="module-button special" id="bomb-info">
             <img src="https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/37/2014/06/05162439/White-Square.jpg" alt="Bomb Info" class="module-img special">
@@ -41,11 +42,11 @@
             <h1 class="module-text special">Bomb Info</h1>
         </div>
 
-    <div class="strike-container">
-        <button type="button" value="minus">−</button>
-        <h3 id="strikes">0</h3>
-        <button type="button" value="add">+</button>
-    </div>
+        <div class="strike-container" id="strike-id">
+            <button type="button" value="minus">−</button>
+            <h3 id="strikes">0</h3>
+            <button type="button" value="add">+</button>
+        </div>
 
         <div class="module-button special" id="solved">
             <img src="http://www.leefilters.com/images/07-bw-standard-23a.jpg" alt="Solved" class="module-img special">
@@ -54,6 +55,7 @@
         </div>
     </div>
 
+    <!-- module buttons -->
     <main class="module-container">
 
         <div class="module-button" id="simple-wires">
@@ -125,6 +127,7 @@
 
     </main>
 
+    <!-- bomb Information -->
     <div id="modal-backdrop" class=""></div>
     <div id="bomb-info-modal" class="module-modal">
         <div class="modal-dialog">
@@ -133,7 +136,7 @@
                 <button type="button" value="result" class="modal-close-button">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Serial: <input type="text" id="serial"></p>
+                <p>Serial: <input type="text" id="serial" maxlength="6"></p>
                 <p>Batteries:
                     <label class="radio-container">0
                         <input type="radio" name="batteries" value="0"></input>
@@ -173,6 +176,7 @@
         </div>
     </div>
 
+    <!-- simple wires -->
     <div id="simple-wires-modal" class="module-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
@@ -194,7 +198,7 @@
                     </div>
                 </div>
 
-	        </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" value="undo" class="modal-cancel-button">Undo</button>
                 <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
@@ -203,6 +207,7 @@
         </div>
     </div>
 
+    <!-- the button -->
     <div id="the-button-modal" class="module-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
@@ -249,7 +254,7 @@
                 <div class="the-button-result">
 
                 </div>
-	        </div>
+            </div>
             <div class="modal-footer">
                 <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
                 <button type="button" value="result" class="modal-accept-button">Result</button>
@@ -257,6 +262,7 @@
         </div>
     </div>
 
+    <!-- passwords -->
     <div id="passwords-modal" class="module-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
@@ -280,6 +286,7 @@
         </div>
     </div>
 
+    <!-- simon says -->
     <div id="simon-says-modal" class="module-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
