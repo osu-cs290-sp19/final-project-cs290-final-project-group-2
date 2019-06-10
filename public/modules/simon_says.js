@@ -100,6 +100,7 @@ function show_simon_says_results(string) {
         var simonSayResults = document.createElement("p");
         simonSayResults.textContent = string;
         simonSayResults.classList.add("simon-says-result");
+        simonSayResults.classList.add(string.toLowerCase()+"-font")
         simonSaysBody.appendChild(simonSayResults);
     }
 }

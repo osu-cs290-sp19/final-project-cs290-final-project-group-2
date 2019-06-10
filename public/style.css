@@ -576,6 +576,19 @@ h1 {
     color: white;
 }
 
+.yellow-font {
+    color: #dbdb1a;
+}
+.blue-font {
+    color: #2139be;
+}
+.red-font {
+    color: #dd0a07;
+}
+.green-font {
+    color: #248c04;
+}
+
 .simple-wires-result {
     position: static;
 }
