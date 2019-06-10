@@ -42,7 +42,7 @@ window.onload = function() {
 
     //Memory
     document.getElementById("memory").addEventListener("click", display_memory_module);
-    document.getElementById("memory-modal").addEventListener("click", stage_1);
+    document.getElementById("memory-modal").addEventListener("click", run_stages);
 
 }
 
