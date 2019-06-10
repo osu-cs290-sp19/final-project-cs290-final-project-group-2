@@ -137,9 +137,21 @@ a:focus {
         padding: 10px;
         width: 50%;
         border-radius: 5px;
+        border: solid 2px white;
+        background: rgb(25, 25, 26);
+        color: white;
+        font-size: 16px;
     }
     .level-menu:hover {
-        background-color: white;
+        /* background-color: rgb(38, 38, 40); */
+        border-color: #ba4423;
+    }
+    .level-menu:focus {
+        outline: none;
+        border-color: #ba4423;
+    }
+    .level-menu option {
+        font-size: 16px;
     }
         .a {
             grid-column: 1;
