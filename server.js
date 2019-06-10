@@ -73,21 +73,23 @@ app.post('/stats/update', function (req, res){
     if(!data) {
       add_user(req.body);
     } else {
-      //console.log(data.stats.bombsSolved);
       var incModules = data.stats.modulesSolved + req.body.stats.modulesSolved;
       var incWires = data.stats.totalWiresCut + req.body.stats.totalWiresCut;
+      var incStrikes = data.stats.totalStrikesReceived + req.body.stats.totalStrikesReceived;
       if(!(data.stats.levelSolved.includes(req.body.stats.levelSolved[0]))) {
         users.updateOne(data, {
             $push: {"stats.levelSolved": req.body.stats.levelSolved[0]},
             $inc: {"stats.bombsSolved": 1},
             $set: {"stats.modulesSolved": incModules},
-            $set: {"stats.totalWiresCut": incWires}
+            $set: {"stats.totalWiresCut": incWires},
+            $set: {"stats.totalStrikesReceived": incStrikes}
         });
       } else {
         users.updateOne(data, {
             $inc: {"stats.bombsSolved": 1},
             $set: {"stats.modulesSolved": incModules},
-            $set: {"stats.totalWiresCut": incWires}
+            $set: {"stats.totalWiresCut": incWires},
+            $set: {"stats.totalStrikesReceived": incStrikes}
         });
       }
       console.log(data.name, "has solved:", (data.stats.bombsSolved + 1), "bombs");
