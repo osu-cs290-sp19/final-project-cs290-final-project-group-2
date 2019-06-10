@@ -2,6 +2,7 @@ console.log("Value retrieved:", sessionStorage.getItem("bombId"));
 var modulesSolved = 0;
 var totalWiresCut = 0;
 var num_strikes = 0;
+var totalStrikesReceived
 
 
 window.onload = function() {
@@ -113,7 +114,8 @@ function bomb_complete() {
         bombsSolved: 1,
         levelSolved: [sessionStorage.getItem("bombId")],
         modulesSolved: modulesSolved,
-        totalWiresCut: totalWiresCut
+        totalWiresCut: totalWiresCut,
+        totalStrikesReceived: totalStrikesReceived
       }
     };
     console.log("modules", modulesSolved);
@@ -125,7 +127,7 @@ function bomb_complete() {
         body: JSON.stringify(data)
     };
     fetch('/stats/update', request);
-    modulesSolved = totalWiresCut = 0;
+    modulesSolved = totalWiresCut = totalStrikesReceived = 0;
 
     // fetch('/stats/update').then(response => {
     //     console.log(response);
@@ -136,8 +138,10 @@ function bomb_complete() {
 function strike_counter(e) {
     if(e.target.value === "minus" && num_strikes > 0) {
         num_strikes--;
+        totalStrikesReceived--;
     } else if(e.target.value === "add" && num_strikes < 2 ) { /*later add MAX_STRIKES - 1 in place of 2*/
         num_strikes++;
+        totalStrikesReceived++;
     }
     document.getElementById("strikes").textContent = num_strikes;
 }
