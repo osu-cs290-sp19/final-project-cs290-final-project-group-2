@@ -40,6 +40,10 @@ window.onload = function() {
     document.getElementById("simon-says").addEventListener("click", display_simon_says_module);
     document.getElementById("simon-says-modal").addEventListener("click", start_simon_says);
 
+    //Memory
+    document.getElementById("memory").addEventListener("click", display_memory_module);
+    document.getElementById("memory-modal").addEventListener("click", stage_1);
+
 }
 
 function display_bomb_info_module() {

@@ -1,3 +1,13 @@
+function display_memory_module() {
+    document.getElementById("modal-backdrop").classList.remove("hidden");
+    document.getElementById("memory-modal").classList.remove("hidden");
+}
+
+function hide_memory_module() {
+    document.getElementById("modal-backdrop").classList.add("hidden");
+    document.getElementById("memory-modal").classList.add("hidden");
+}
+
 var positions = [];
 var labels = [];
 
