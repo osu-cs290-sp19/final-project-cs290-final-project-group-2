@@ -118,11 +118,8 @@ a:focus {
 }
     .level {
         display: block;
-        /*background-color: #0c0c0e;*/
-        background-color: rgb(25, 25, 25);
+        background-color: rgb(25, 25, 26);
         border-radius: 10px;
-        /*border: solid 2px #ba4423;*/
-        /*box-shadow: 10px 10px 20px #ba4423;*/
         box-shadow: 10px 10px 20px rgb(111, 111, 115);
     }
     .section {
@@ -266,33 +263,50 @@ a:focus {
 
 /*----- stats page -----*/
 .stats-container {
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 25px;
+    margin-left: 27%;
+    margin-right: 27%;
+    margin-top: 0px;
 }
 
 .user-stats {
     display: flex;
-    background: rgb(111, 111, 115);
-    margin: 10px;
+    /* float: right; */
+    background: rgb(25, 25, 26);
+    margin: 13px;
     border-radius: 10px;
+    border: solid white 1px;
+    justify-content: space-between;
+}
+
+.user-stats:hover {
+    border-color: #ba4423;
+    background-color: black;
 }
 
 .user-stats h2 {
-    padding-left: 10px;
+    padding-left: 30px;
 }
 
 .user-stats p {
-    display: block;
-    float: right;
-    margin-left: 25%;
+    padding-right: 30px;
+    padding-top: 10px;
 }
 
 /*----- individual stats -----*/
 .stats-name {
     /*margin-left: 50%;*/
     color: white;
-    margin-top: 2s0px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    font-size: 50px;
+    text-align: center;
+}
+
+h1 {
+    padding: 5px 0px;
+    color: white;
+    margin-top: 2px;
+    margin-bottom: -10px;
     font-size: 50px;
     text-align: center;
 }
@@ -304,7 +318,7 @@ a:focus {
 
 .stats-block {
     /*background: #0c0c0e;*/
-    background: rgb(25, 25, 25);
+    background: rgb(25, 25, 26);
     border-radius: 10px;
     margin: 0px 25px;
     width: 35%;
@@ -323,7 +337,7 @@ a:focus {
 .stats-block p {
     padding: 5px;
     padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 15px;
     padding-bottom: 10px;
     margin: 0;
     color: white;
@@ -358,7 +372,7 @@ a:focus {
     margin: 200px auto;
     border: solid 2px #ba4423;
     border-radius: 18px;
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(25, 25, 26);
 }
 
 .modal-header {

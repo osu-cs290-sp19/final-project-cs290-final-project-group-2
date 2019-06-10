@@ -31,13 +31,16 @@
         </header>
 
         <main>
+            <h1>Statistics</h1>
             <div class="stats-container">
                 {{#each users}}
+                {{#if this.name}}
                 <a href="/stats/{{this.name}}">
                     <div class="user-stats">
                         {{> userStats}}
                     </div>
                 </a>
+                {{/if}}
                 {{/each}}
             </div>
         </main>
