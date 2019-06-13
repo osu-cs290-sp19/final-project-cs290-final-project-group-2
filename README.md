@@ -15,7 +15,7 @@ The basic idea of the game is that there is bomb that needs to be defused by a t
 2. Setup environment variables by editing the mongoEnv file, then run ```. ./mongoEnv```
 3. Run ```npm run start``` to start the server.
 
-###For grading purposes:
+### For grading purposes:
 Joseph Andrews and [GAndrews98](https://github.com/GAndrews98) are the same person  
 Ryan Russell and [russelry](https://github.com/russelry) are the same person  
 Alexander Rash and [AERash](https://github.com/AERash) are the same person  
