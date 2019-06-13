@@ -96,5 +96,5 @@ MongoClient.connect(mongoUrl, {useNewUrlParser: true}, function (err,client){
     throw err;
   database = client.db(mongoName);
   users = database.collection('users');
-  app.listen(80, '10.0.0.105', () => console.log('Listening on port ', port));
+  app.listen(port, () => console.log('Listening on port ', port));
 });
