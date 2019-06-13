@@ -102,7 +102,7 @@ function stage_1() {
         document.getElementsByClassName("display-input")[0].classList.add("hidden");
         document.getElementsByClassName("label-input")[0].classList.remove("hidden");
     } else {
-        alert("Valid display not entered");
+        console.log("Valid display not entered");
     }
 }
 
@@ -124,7 +124,7 @@ function stage_2() {
         document.getElementsByClassName("display-input")[0].classList.add("hidden");
         document.getElementsByClassName("label-input")[0].classList.remove("hidden");
     } else {
-        alert("Valid display not entered");
+        console.log("Valid display not entered");
     }
 }
 
@@ -151,7 +151,7 @@ function stage_3() {
         document.getElementsByClassName("display-input")[0].classList.add("hidden");
         document.getElementsByClassName("position-input")[0].classList.remove("hidden");
     } else {
-        alert("Valid display not entered");
+        console.log("Valid display not entered");
     }
 }
 
@@ -173,7 +173,7 @@ function stage_4() {
         document.getElementsByClassName("display-input")[0].classList.add("hidden");
         document.getElementsByClassName("label-input")[0].classList.remove("hidden");
     } else {
-        alert("Valid display not entered");
+        console.log("Valid display not entered");
     }
 }
 
