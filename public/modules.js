@@ -44,6 +44,27 @@ window.onload = function() {
     document.getElementById("memory").addEventListener("click", display_memory_module);
     document.getElementById("memory-modal").addEventListener("click", run_stages);
 
+    //Memory submit buttons
+    document.getElementById("label-submit").addEventListener("click", function() {
+        if(document.getElementById("memory-label").value) {
+            labels.push(document.getElementById("memory-label").value);
+            clear_all_inputs();
+            document.getElementsByClassName("label-input")[0].classList.add("hidden");
+            document.getElementsByClassName("display-input")[0].classList.remove("hidden");
+            run_the_next_stage();
+        }
+    });
+
+    document.getElementById("position-submit").addEventListener("click", function() {
+        if(document.getElementById("memory-position").value) {
+            positions.push(document.getElementById("memory-position").value);
+            clear_all_inputs();
+            document.getElementsByClassName("position-input")[0].classList.add("hidden");
+            document.getElementsByClassName("display-input")[0].classList.remove("hidden");
+            run_the_next_stage();
+        }
+    });
+
 }
 
 function display_bomb_info_module() {
