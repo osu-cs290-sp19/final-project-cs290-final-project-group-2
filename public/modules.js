@@ -26,6 +26,7 @@ window.onload = function() {
     //Morse Code
     /*document.getElementById('morse-code').addEventListener("click", display_morse_code_module);
     document.getElementById('morse-code-modal').addEventListener("click", check_morse_code); */
+    document.getElementById("morse-code").addEventListener("click", function() { alert("This module is not yet implemented") });
 
     //Solved button
     document.getElementById("solved").addEventListener("click", bomb_complete);
@@ -43,6 +44,21 @@ window.onload = function() {
     //Memory
     document.getElementById("memory").addEventListener("click", display_memory_module);
     document.getElementById("memory-modal").addEventListener("click", run_stages);
+
+    //Maze
+    document.getElementById("mazes").addEventListener("click", function() { alert("This module is not yet implemented") });
+
+    //Whos on first
+    document.getElementById("whos-on-first").addEventListener("click", function() { alert("This module is not yet implemented") });
+
+    //Complicated wires
+    document.getElementById("complicated-wires").addEventListener("click", function() { alert("This module is not yet implemented") });
+
+    //Wire sequence
+    document.getElementById("wire-sequence").addEventListener("click", function() { alert("This module is not yet implemented") });
+
+    //Keypads
+    document.getElementById("keypads").addEventListener("click", function() { alert("This module is not yet implemented") });
 
     //Memory submit buttons
     document.getElementById("label-submit").addEventListener("click", function() {
