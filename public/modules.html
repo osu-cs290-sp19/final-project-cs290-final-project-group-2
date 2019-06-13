@@ -8,6 +8,7 @@
     <title>The Modules</title>
     <meta name="description" content="The Modules">
     <meta name="author" content="SitePoint">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
     <link rel="stylesheet" href="style.css">
     <script src="modules.js"></script>
@@ -311,6 +312,40 @@
             <div class="modal-footer">
                 <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
                 <button type="button" value="done" class="modal-accept-button">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- memory -->
+    <div id="memory-modal" class="module-modal hidden">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Memory</h3>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
+            </div>
+            <div class="simple-modal-body">
+                <div class="display-input">
+                    <p>Display Number: </p>
+                    <input type="text" id="memory-display" maxlength="1">
+                    <button type="button" class="simple-button ktane-red" id="display-submit" value="display-submit">Submit</button>
+                </div>
+                <div class="label-input hidden">
+                    <p>Enter Label: </p>
+                    <input type="text" id="memory-label" maxlength="1">
+                    <button type="button" class="simple-button ktane-red" id="label-submit">Submit</button>
+                </div>
+                <div class="position-input hidden">
+                    <p>Enter Position: </p>
+                    <input type="text" id="memory-position" maxlength="1">
+                    <button type="button" class="simple-button ktane-red" id="position-submit">Submit</button>
+                </div>
+                <div class="prompt-container">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
+                <button type="button" value="result" class="modal-accept-button">Done</button>
             </div>
         </div>
     </div>

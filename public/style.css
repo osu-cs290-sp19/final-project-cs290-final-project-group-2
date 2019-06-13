@@ -1,5 +1,10 @@
+* {
+    font-family: 'Special Elite';
+    /* line-height: 90%; */
+}
+
 body {
-    font-family: Roboto, Helvetica, sans-serif;
+    /* font-family: Roboto, Helvetica, sans-serif; */
     margin: 0;
     background-color: #2f2f33;
 }
@@ -36,7 +41,7 @@ a:focus {
 
 .hidden {
     /* visibility: hidden; */
-    display: none;
+    display: none !important;
 }
 
 /* ----- navbar ----- */
@@ -250,7 +255,8 @@ a:focus {
     border: none;
     width: 75px;
     background-color: #ba4423;
-    font-size: 60px;
+    font-family: Helvetica, sans-serif;
+    font-size: 65px;
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -476,7 +482,7 @@ h1 {
 
 .simple-wires-result {
     margin-left: auto;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 #wire-container {
@@ -487,6 +493,7 @@ h1 {
     height: 200px;
     z-index: 0;
     position: absolute;
+    margin-left: -15px;
 }
 
 #actual-wire-container {
@@ -501,7 +508,7 @@ h1 {
     top: 7px;
     left: 6px;
     margin: 15px;
-    margin-left: 13px;
+    margin-left: -2px;
     margin-bottom: 23px;
     border-radius: 3px;
 }
@@ -543,6 +550,38 @@ h1 {
 }
 .simon-says-container p {
     padding: 4px;
+    /* letter-spacing: -1px; */
+    font-size: 19px;
+    /* justify-content: space-between; */
+}
+
+.display-input {
+    display: grid;
+}
+.display-input p {
+    margin-bottom: 5px;
+    margin-left: 12px;
+}
+.label-input {
+    display: grid;
+}
+.label-input p {
+    margin-bottom: 5px;
+    margin-left: 12px;
+}
+.position-input {
+    display: grid;
+}
+.position-input p {
+    margin-bottom: 5px;
+    margin-left: 12px;
+}
+.simple-button.ktane-red {
+    margin-top: 8px;
+    margin-left: 45px;
+}
+.prompt-container {
+    margin-left: 25px;
 }
 
 .red {
@@ -563,7 +602,10 @@ h1 {
     background-color: #020202;
     color: white;
 }
-
+.ktane-red {
+    background-color: #ba4423;
+    color: white;
+}
 .simon-red {
     background-color: #6A050C;
     color: white;
@@ -599,9 +641,13 @@ h1 {
 }
 
 .button-color {
+    margin-top: 7px;
     display: grid;
 }
 
+.button-text {
+    margin-top: 7px;
+}
 .button-color label {
     padding-bottom: 32px;
 }
@@ -609,7 +655,7 @@ h1 {
 .button-text label{
     display: grid;
     margin-left: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
     padding: 0px 30px;
 }
 
@@ -662,6 +708,10 @@ input[type=text]:focus {
     user-select: none;
 }
 
+.radio-container span {
+    margin-top: -7px;
+}
+
 input[type=radio] {
     position: absolute;
     opacity: 0;
@@ -680,12 +730,15 @@ input[type=radio] {
 }
 
 .radio-check.color-radio {
-    width: 50px;
+    width: 60px;
     /*margin-left: 50px;*/
     text-align: center;
-    padding-left: 10px;
+    padding-left: 5px;
     padding-right: 10px;
+    padding-top: 5px;
+    margin-bottom: 0px;
     border-radius: 5px;
+    /* font-size: 18px; */
 }
 .radio-container input:checked ~ .radio-check.color-radio.red {
     background-color: red;
@@ -785,7 +838,7 @@ input[type=checkbox] {
 .radio-container img {
     position: absolute;
     margin-left: 10px;
-    margin-top: 6px;
+    margin-top: 0px;
     border-radius: 5px;
 }
 
