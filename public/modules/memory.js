@@ -52,12 +52,29 @@ function run_the_next_stage() {
     }
 }
 
+function clear_all_memory_arrays() {
+    labels = [];
+    positions = [];
+}
 
 
 function run_stages(e) {
     if(e.target.value === "display-submit") {
         // document.getElementsByClassName("display-input")[0].classList.add("hidden");
         run_the_next_stage();
+    }
+    if(e.target.value === "cancel") {
+        clear_all_inputs();
+        clear_all_memory_arrays();
+        hide_memory_module();
+        clear_memory_results();
+    }
+    if(e.target.value === "result") {
+        modulesSolved++;
+        clear_all_inputs();
+        clear_all_memory_arrays();
+        hide_memory_module();
+        clear_memory_results();
     }
 }
 
@@ -85,7 +102,7 @@ function stage_1() {
         document.getElementsByClassName("display-input")[0].classList.add("hidden");
         document.getElementsByClassName("label-input")[0].classList.remove("hidden");
     } else {
-        console.log("Valid display not entered");
+        alert("Valid display not entered");
     }
 }
 
@@ -107,7 +124,7 @@ function stage_2() {
         document.getElementsByClassName("display-input")[0].classList.add("hidden");
         document.getElementsByClassName("label-input")[0].classList.remove("hidden");
     } else {
-        console.log("Valid display not entered");
+        alert("Valid display not entered");
     }
 }
 
@@ -134,7 +151,7 @@ function stage_3() {
         document.getElementsByClassName("display-input")[0].classList.add("hidden");
         document.getElementsByClassName("position-input")[0].classList.remove("hidden");
     } else {
-        console.log("Valid display not entered");
+        alert("Valid display not entered");
     }
 }
 
@@ -156,7 +173,7 @@ function stage_4() {
         document.getElementsByClassName("display-input")[0].classList.add("hidden");
         document.getElementsByClassName("label-input")[0].classList.remove("hidden");
     } else {
-        console.log("Valid display not entered");
+        alert("Valid display not entered");
     }
 }
 
