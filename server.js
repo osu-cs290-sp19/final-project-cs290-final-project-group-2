@@ -57,25 +57,25 @@ app.post('/stats/update', function (req, res){
     if(!data) {
       add_user(req.body); //create new user if not present
     } else {
-      //stats incrementors
-      var incModules = data.stats.modulesSolved + req.body.stats.modulesSolved;
-      var incWires = data.stats.totalWiresCut + req.body.stats.totalWiresCut;
-      var incStrikes = data.stats.totalStrikesReceived + req.body.stats.totalStrikesReceived;
       //push new level or not to stats based on if completed
       if(!(data.stats.levelSolved.includes(req.body.stats.levelSolved[0]))) {
         users.updateOne(data, {
             $push: {"stats.levelSolved": req.body.stats.levelSolved[0]},
-            $inc: {"stats.bombsSolved": 1},
-            $set: {"stats.modulesSolved": incModules},
-            $set: {"stats.totalWiresCut": incWires},
-            $set: {"stats.totalStrikesReceived": incStrikes}
+            $inc: {
+                "stats.bombsSolved": 1,
+                "stats.modulesSolved": req.body.stats.modulesSolved,
+                "stats.totalWiresCut": req.body.stats.totalWiresCut,
+                "stats.totalStrikesReceived": req.body.stats.totalStrikesReceived
+            }
         });
       } else {
         users.updateOne(data, {
-            $inc: {"stats.bombsSolved": 1},
-            $set: {"stats.modulesSolved": incModules},
-            $set: {"stats.totalWiresCut": incWires},
-            $set: {"stats.totalStrikesReceived": incStrikes}
+            $inc: {
+                "stats.bombsSolved": 1,
+                "stats.modulesSolved": req.body.stats.modulesSolved,
+                "stats.totalWiresCut": req.body.stats.totalWiresCut,
+                "stats.totalStrikesReceived": req.body.stats.totalStrikesReceived
+            }
         });
       }
       console.log(data.name, "has solved:", (data.stats.bombsSolved + 1), "bombs");
@@ -96,5 +96,5 @@ MongoClient.connect(mongoUrl, {useNewUrlParser: true}, function (err,client){
     throw err;
   database = client.db(mongoName);
   users = database.collection('users');
-  app.listen(port, () => console.log('Listening on port ', port));
+  app.listen(80, '10.0.0.105', () => console.log('Listening on port ', port));
 });
