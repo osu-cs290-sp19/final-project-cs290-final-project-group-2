@@ -584,6 +584,27 @@ h1 {
     margin-left: 25px;
 }
 
+.complicated-options {
+    display: grid;
+    padding-top: 15px;
+    width: 300px;
+}
+
+.complicated-options label {
+    padding-bottom: 5px;
+}
+
+.complicated-options div {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.square {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
 .red {
     background-color: #FE0E0A;
     color: white;

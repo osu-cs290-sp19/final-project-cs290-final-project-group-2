@@ -52,7 +52,8 @@ window.onload = function() {
     document.getElementById("whos-on-first").addEventListener("click", function() { alert("This module is not yet implemented") });
 
     //Complicated wires
-    document.getElementById("complicated-wires").addEventListener("click", function() { alert("This module is not yet implemented") });
+    document.getElementById("complicated-wires").addEventListener("click", display_complicated_wires_module);
+    document.getElementById("complicated-wires-modal").addEventListener("click", run_complicated_wires);
 
     //Wire sequence
     document.getElementById("wire-sequence").addEventListener("click", function() { alert("This module is not yet implemented") });
@@ -115,6 +116,10 @@ function get_car() {
 
 function get_serial() {
     return document.getElementById("serial").value;
+}
+
+function get_parallel() {
+    return document.getElementById("parallel").checked;
 }
 
 function get_parity() {
