@@ -590,6 +590,7 @@ h1 {
     width: 300px;
 }
 
+
 .complicated-options label {
     padding-bottom: 5px;
 }
@@ -603,6 +604,27 @@ h1 {
     width: 16px;
     height: 16px;
     display: inline-block;
+}
+
+/* .simple-button.dot{
+    margin-right: 50px;
+}
+
+.simple-button.dash{
+    margin-right: 50px;
+} */
+
+#morse-code-modal .simple-buttons {
+    margin-right: -40px;
+}
+
+.gap {
+    margin-top: 22px;
+    margin-left: 0;
+}
+
+.morse-code-container {
+    margin-left: 90px;
 }
 
 .red {
