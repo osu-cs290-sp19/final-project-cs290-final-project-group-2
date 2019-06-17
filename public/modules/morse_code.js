@@ -8,8 +8,7 @@ function hide_morse_code_module() {
     document.getElementById("morse-code-modal").classList.add("hidden");
 }
 
-var all_morse_words = ["shell", "halls", "slick", "trick", "boxes", "leaks", "strobe", "bistro", "flick", "bombs", "break", "brick", "steak", "sting", "vector", "beats"];
-var user_morse_words = [];
+var user_morse_words = "Nothing is currently selected";
 var dot_dash = [];
 var string = "";
 var morse_number = "";
@@ -26,10 +25,30 @@ function check_morse_code(e) {
         check_dot_dash();
     }
     if(e.target.value === "result") {
+        remove_morse_code_results();
         fill_user_array();
         set_number();
         show_morse_code_results();
+        clear_morse_code_arrays();
     }
+    if(e.target.value === "cancel") {
+        clear_morse_code_arrays();
+        remove_morse_code_results();
+        hide_morse_code_module();
+    }
+    if(e.target.value === "done") {
+        clear_morse_code_arrays();
+        remove_morse_code_results();
+        hide_morse_code_module();
+        modulesSolved++;
+    }
+}
+
+function clear_morse_code_arrays() {
+    user_morse_words = "Nothing is currently selected";
+    dot_dash = [];
+    string = "";
+    morse_number = "";
 }
 
 function check_dot_dash() {
@@ -104,71 +123,71 @@ function find_the_letter(x) {
 
 function fill_user_array() {
     if(string === "shell" || string === "hells" || string === "ellsh" || string === "llshe" || string === "lshel")
-        user_morse_words.push("shell");
+        user_morse_words = "shell";
     else if(string === "halls" || string === "allsh" || string === "llsha" || string === "lshal" || string === "shall")
-        user_morse_words.push("halls");
+        user_morse_words = "halls";
     else if(string === "slick" || string === "licks" || string === "icksl" || string === "cksli" || string === "kslic")
-        user_morse_words.push("slick");
+        user_morse_words = "slick";
     else if(string === "trick" || string === "rickt" || string === "icktr" ||  string === "cktri" || string === "ktric")
-        user_morse_words.push("trick");
+        user_morse_words = "trick";
     else if(string === "boxes" || string === "oxesb" || string === "xesbo" || string === "esbox" || string === "sboxe")
-        user_morse_words.push("boxes");
+        user_morse_words = "boxes";
     else if(string === "leaks" || string === "eaksl" || string === "aksle" || string === "kslea" || string === "sleak")
-        user_morse_words.push("leaks");
+        user_morse_words = "leaks";
     else if(string === "strobe" || string === "trobes" || string === "robest" || string === "obestr" || string === "bestro" || string === "estrob")
-        user_morse_words.push("strobe");
+        user_morse_words = "strobe";
     else if(string === "bistro" || string === "istrob" || string === "strobi" || string === "trobis" || string === "robist" || string === "obistr")
-        user_morse_words.push("bistro");
+        user_morse_words = "bistro";
     else if(string === "flick" || string === "lickf" || string === "ickfl" || string === "ckfli" || string === "kflic")
-        user_morse_words.push("flick");
+        user_morse_words = "flick";
     else if(string === "bombs" || string === "ombsb" || string === "mbsbo" || string === "bsbom" || string === "sbomb")
-        user_morse_words.push("bombs");
+        user_morse_words = "bombs";
     else if(string === "break" || string === "reakb" || string === "eakbr" || string === "akbre" || string === "kbrea")
-        user_morse_words.push("break");
+        user_morse_words = "break";
     else if(string === "brick" || string === "rickb" || string === "ickbr" || string === "ckbri" || string === "kbric")
-        user_morse_words.push("brick");
+        user_morse_words = "brick";
     else if(string === "steak" || string === "teaks" || string === "eakst" || string === "akste" || string === "kstea")
-        user_morse_words.push("steak");
+        user_morse_words = "steak";
     else if(string === "sting" || string === "tings" || string === "ingst" || string === "ngsti" || string === "gstin")
-        user_morse_words.push("sting");
+        user_morse_words = "sting";
     else if(string === "vector" || string === "ectorv" || string === "ctorve" || string === "torvec" || string === "orvect" || string === "rvecto")
-        user_morse_words.push("vector");
+        user_morse_words = "vector";
     else if(string === "beats" || string === "eatsb" || string === "atsbe" || string === "tsbea" || string === "sbeat")
-        user_morse_words.push("beats");
+        user_morse_words = "beats";
 }
 
 function set_number() {
-    if(user_morse_words[0] === "shell")
+    if(user_morse_words === "shell")
         morse_number = "3.505 MHz";
-    else if(user_morse_words[0] === "halls")
+    else if(user_morse_words === "halls")
         morse_number = "3.515 MHz";
-    else if(user_morse_words[0] === "slick")
+    else if(user_morse_words === "slick")
         morse_number = "3.522 MHz";
-    else if(user_morse_words[0] === "trick")
+    else if(user_morse_words === "trick")
         morse_number = "3.532 MHz";
-    else if(user_morse_words[0] === "boxes")
+    else if(user_morse_words === "boxes")
         morse_number = "3.535 MHz";
-    else if(user_morse_words[0] === "leaks")
+    else if(user_morse_words === "leaks")
         morse_number = "3.542 MHz";
-    else if(user_morse_words[0] === "strobe")
+    else if(user_morse_words === "strobe")
         morse_number = "3.545 MHz";
-    else if(user_morse_words[0] === "bistro")
+    else if(user_morse_words === "bistro")
         morse_number = "3.552 MHz";
-    else if(user_morse_words[0] === "flick")
+    else if(user_morse_words === "flick")
         morse_number = "3.555 MHz";
-    else if(user_morse_words[0] === "bombs")
+    else if(user_morse_words === "bombs")
         morse_number = "3.565 MHz";
-    else if(user_morse_words[0] === "break")
+    else if(user_morse_words === "break")
         morse_number = "3.572 MHz";
-    else if(user_morse_words[0] === "brick")
+    else if(user_morse_words === "brick")
         morse_number = "3.575 MHz";
-    else if(user_morse_words[0] === "steak")
+    else if(user_morse_words === "steak")
         morse_number = "3.582 MHz";
-    else if(user_morse_words[0] === "sting")
+    else if(user_morse_words === "sting")
         morse_number = "3.592 MHz";
-    else if(user_morse_words[0] === "vector")
+    else if(user_morse_words === "vector")
         morse_number = "3.595 MHz";
-    else if(user_morse_words[0] === "beats")
+    else if(user_morse_words === "beats")
         morse_number = "3.600 MHz";
 
 }
@@ -178,6 +197,11 @@ function show_morse_code_results() {
 
     var morseResults = document.createElement("p");
     morseResults.classList.add("morse-result");
-    morseResults.textContent = user_morse_words[0] + morse_number;
+    morseResults.textContent = user_morse_words + morse_number;
     morseContainer.appendChild(morseResults);
+}
+
+function remove_morse_code_results() {
+    if (document.getElementsByClassName("morse-result")[0])
+        document.getElementsByClassName("morse-result")[0].remove();
 }
