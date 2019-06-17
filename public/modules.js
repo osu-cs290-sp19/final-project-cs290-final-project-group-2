@@ -57,8 +57,10 @@ window.onload = function() {
     document.getElementById("complicated-wires-modal").addEventListener("click", run_complicated_wires);
 
     //Wire sequence
-    document.getElementById("wire-sequence").addEventListener("click", function() { alert("This module is not yet implemented") });
-
+    document.getElementById("wire-sequence").addEventListener("click", display_wire_sequence_module);
+    document.getElementById("wire-sequence-modal").addEventListener("click", check_sequence);
+    //function() { alert("This module is not yet implemented") });
+    
     //Keypads
     document.getElementById("keypads").addEventListener("click", function() { alert("This module is not yet implemented") });
 

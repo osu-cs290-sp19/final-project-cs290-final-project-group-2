@@ -357,7 +357,7 @@
             <div class="modal-header">
                 <h3>Complicated Wires</h3>
                 <!-- I dont think the value for this button should be result. Shouldn't it be cancel? -->
-                <button type="button" value="result" class="modal-close-button">&times;</button>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
             </div>
             <div class="simple-modal-body">
                 <!-- <div></div> -->
@@ -387,6 +387,75 @@
                 <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
                 <button type="button" value="result" class="modal-accept-button">Check</button>
                 <button type="button" value="done" class="modal-accept-button">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- wire sequence -->
+    <div id="wire-sequence-modal" class="module-modal hidden">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Wire Sequence</h3>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
+            </div>
+            <div class="simple-modal-body">
+              <div>
+                  <p>Wire 1:
+                      <!-- <label class="radio-container">No Wire
+                          <input type="radio" name="color" value="nowire"></input>
+                          <span class="radio-check"></span>
+                      </label> -->
+                      <label class="radio-container">Red
+                          <input type="radio" name="wire1" value="red"></input>
+                          <span class="radio-check"></span>
+                      </label>
+                      <label class="radio-container">Blue
+                          <input type="radio" name="wire1" value="blue"></input>
+                          <span class="radio-check"></span>
+                      </label>
+                      <label class="radio-container">Black
+                          <input type="radio" name="wire1" value="black"></input>
+                          <span class="radio-check"></span>
+                      </label></p>
+                  <p>Wire 2:
+                      <!-- <label class="radio-container">No Wire
+                          <input type="radio" name="color" value="nowire"></input>
+                          <span class="radio-check"></span> -->
+                      <!-- </label> -->
+                      <label class="radio-container">Red
+                          <input type="radio" name="wire2" value="red"></input>
+                          <span class="radio-check"></span>
+                      </label>
+                      <label class="radio-container">Blue
+                          <input type="radio" name="wire2" value="blue"></input>
+                          <span class="radio-check"></span>
+                      </label>
+                      <label class="radio-container">Black
+                          <input type="radio" name="wire2" value="black"></input>
+                          <span class="radio-check"></span>
+                      </label></p>
+                  <p>Wire 3:
+                      <!-- <label class="radio-container">No Wire
+                          <input type="radio" name="batteries" value="nowire"></input>
+                          <span class="radio-check"></span>
+                      </label> -->
+                      <label class="radio-container">Red
+                          <input type="radio" name="wire3" value="red"></input>
+                          <span class="radio-check"></span>
+                      </label>
+                      <label class="radio-container">Blue
+                          <input type="radio" name="wire3" value="blue"></input>
+                          <span class="radio-check"></span>
+                      </label>
+                      <label class="radio-container">Black
+                          <input type="radio" name="wire3" value="black"></input>
+                          <span class="radio-check"></span>
+                      </label></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
+                <button type="button" value="result" class="modal-accept-button">Result</button>
             </div>
         </div>
     </div>
