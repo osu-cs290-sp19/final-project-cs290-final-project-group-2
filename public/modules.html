@@ -351,10 +351,12 @@
         </div>
     </div>
 
+    <!-- Complicated Wires -->
     <div id="complicated-wires-modal" class="module-modal hidden">
         <div class="modal-dialog">
             <div class="modal-header">
                 <h3>Complicated Wires</h3>
+                <!-- I dont think the value for this button should be result. Shouldn't it be cancel? -->
                 <button type="button" value="result" class="modal-close-button">&times;</button>
             </div>
             <div class="simple-modal-body">
@@ -380,6 +382,31 @@
                 <div class="complicated-container">
 
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
+                <button type="button" value="result" class="modal-accept-button">Check</button>
+                <button type="button" value="done" class="modal-accept-button">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Morse Code -->
+    <div id="morse-code-modal"class="module-modal hidden">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Morse Code</h3>
+                <button type="button" value="cancel" class="modal-close-button">&times;</button>
+            </div>
+            <div class="simple-modal-body">
+                <div class="morse-code-buttons">
+                    <button type="button" value="short" class="morse-code-button short">Short(1)</button>
+                    <button type="button" value="long" class="morse-code-button long">Long(2)</button>
+                    <button type="button" value="gap" class="morse-code-button gap">Gap(0)</button>
+                </div>
+            </div>
+            <div class="morse-code-container">
+
             </div>
             <div class="modal-footer">
                 <button type="button" value="cancel" class="modal-cancel-button">Cancel</button>
