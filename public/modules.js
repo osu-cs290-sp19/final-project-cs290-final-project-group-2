@@ -20,6 +20,7 @@ window.onload = function() {
 
     //Passwords
     document.getElementById('passwords').addEventListener("click", display_passwords_module);
+    document.getElementById('passwords-modal').addEventListener("keyup", live_search);
     document.getElementById('passwords-modal').addEventListener("click", check_passwords);
     // document.getElementsByClassName('passwords-input')[0].addEventListener("keyup", live_search);
 
@@ -60,7 +61,7 @@ window.onload = function() {
     document.getElementById("wire-sequence").addEventListener("click", display_wire_sequence_module);
     document.getElementById("wire-sequence-modal").addEventListener("click", check_sequence);
     //function() { alert("This module is not yet implemented") });
-    
+
     //Keypads
     document.getElementById("keypads").addEventListener("click", function() { alert("This module is not yet implemented") });
 

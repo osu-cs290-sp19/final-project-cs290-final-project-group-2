@@ -55,8 +55,7 @@ function clear_morse_code_arrays() {
 }
 
 function check_dot_dash() {
-    var x = dot_dash.length;
-    find_the_letter(x);
+    find_the_letter(dot_dash.length);
     dot_dash = [];
 }
 
@@ -65,7 +64,7 @@ function find_the_letter(x) {
         if(dot_dash[0] === "dot")
             array.push("e");
         else if(dot_dash[0] === "dash")
-            array += "t";
+            array.push("t");
     }
     if(x === 2) {
         if(dot_dash[0] === "dot" && dot_dash[1] === "dash")
