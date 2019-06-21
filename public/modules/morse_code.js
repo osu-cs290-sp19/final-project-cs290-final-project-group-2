@@ -20,14 +20,18 @@ function check_morse_code(e) {
     //TODO
     if(e.target.value === "dot") {
         dot_dash.push("dot");
+        show_dot_dash("dot");
     }
     if(e.target.value === "dash") {
         dot_dash.push("dash");
+        show_dot_dash("dash");
     }
     if(e.target.value === "gap") {
         check_dot_dash();
+        remove_all_morse_dot_dash();
     }
     if(e.target.value === "result") {
+        remove_all_morse_dot_dash();
         remove_morse_code_results();
         fill_user_array();
         set_number();
@@ -36,14 +40,20 @@ function check_morse_code(e) {
     }
     if(e.target.value === "cancel") {
         clear_morse_code_arrays();
+        remove_all_morse_dot_dash();
         remove_morse_code_results();
         hide_morse_code_module();
     }
     if(e.target.value === "done") {
         clear_morse_code_arrays();
+        remove_all_morse_dot_dash();
         remove_morse_code_results();
         hide_morse_code_module();
         modulesSolved++;
+    }
+    if(e.target.value === "undo") {
+        undo_dot_dash();
+        remove_one_dot_dash();
     }
 }
 
@@ -127,7 +137,6 @@ function shift_by_one(test, real) {
     var i = 0;
     var first = "";
     var string = "";
-    console.log(real);
     while(i < 6) {
         for(var l = 0; l < test.length; l++) {
             string += test[l];
@@ -223,6 +232,34 @@ function show_morse_code_results() {
 function remove_morse_code_results() {
     if (document.getElementsByClassName("morse-result")[0])
         document.getElementsByClassName("morse-result")[0].remove();
+}
+
+function show_dot_dash(dot_or_dash) {
+    var morseDotDashContainer = document.getElementsByClassName("dot-dash-container")[0];
+
+    var morseDotDash = document.createElement("p");
+    morseDotDash.classList.add("morse-dot-dash");
+    morseDotDash.textContent = dot_or_dash;
+    morseDotDashContainer.appendChild(morseDotDash);
+}
+
+function remove_all_morse_dot_dash() {
+    if (document.getElementsByClassName("morse-dot-dash"))
+        var morseDotDash = document.getElementsByClassName("morse-dot-dash");
+        for(var i = 0; i < morseDotDash.length; i++) {
+            morseDotDash[i].remove();
+            remove_all_morse_dot_dash();
+        }
+}
+
+function remove_one_dot_dash() {
+    if (document.getElementsByClassName("morse-dot-dash"))
+        var morseDotDash = document.getElementsByClassName("morse-dot-dash");
+        morseDotDash[morseDotDash.length-1].remove();
+}
+
+function undo_dot_dash() {
+    dot_dash.pop();
 }
 
 
