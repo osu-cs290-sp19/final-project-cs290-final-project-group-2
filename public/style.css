@@ -698,6 +698,31 @@ h1 {
 
 .cut3 { grid-area: cut3; }
 
+.keypad-container button {
+    text-decoration: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 56px;
+    height: 56px;
+}
+
+.keypad-container button:focus {
+    /* border: solid 2px #ba4423; */
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+.keypad-container button:hover {
+    outline: solid 2px #ba4423;
+    cursor: pointer;
+}
+
+.keypad-container img {
+    width: 56px;
+    height: 56px;
+}
+
 .red {
     background-color: #FE0E0A;
     color: white;

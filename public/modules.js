@@ -63,7 +63,8 @@ window.onload = function() {
     //function() { alert("This module is not yet implemented") });
 
     //Keypads
-    document.getElementById("keypads").addEventListener("click", function() { alert("This module is not yet implemented") });
+    document.getElementById("keypads").addEventListener("click", display_keypads_module);
+    document.getElementById("keypads-modal").addEventListener("click", hide_keypads_module);
 
     //Memory submit buttons
     document.getElementById("label-submit").addEventListener("click", function() {
