@@ -714,7 +714,7 @@ h1 {
     margin: 0;
 }
 .keypad-container button:hover {
-    outline: solid 2px #ba4423;
+    outline: solid 3px #ba4423;
     cursor: pointer;
 }
 
